@@ -1,0 +1,112 @@
+/* CSS reset */
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, address, big, cite, code,
+img, small, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+body { line-height: 1; }
+ol, ul {	list-style: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+/* CSS reset ends */
+
+html { overflow-y: scroll; }
+body { font-family: arial; }
+#wrapper { padding: 10px 0 50px 0; }
+.v-align { display: inline-block; vertical-align: middle; }
+.centered { clear: both; margin: 0 auto; width: 980px; }
+
+.navigation-container { background: #eae6e6; border-bottom: 1px solid #c2bcbc; float: left; width: 100%; }
+#main-nav { margin: 30px 0 -1px 0; overflow: hidden; text-align: center; }
+#main-nav li { display: inline-block; }
+#main-nav a { color: #525252; display: block; font: bold 16px arial; margin: 0 22px; padding: 18px 5px; text-decoration: none; }
+#main-nav a:hover, #main-nav li.PageSelected a { color: #000; }
+#main-nav .PageSelected a { background-image: url('/images/nav_bg.png'); background-position: bottom center; background-repeat: no-repeat; }
+
+.periodic-table { clear: both; margin: 10px auto; }
+.periodic-table .heading { font-size: 20px; font-weight: bold; margin: 5px 0; }
+.periodic-table th  { font-weight: bold; }
+.periodic-table th, .periodic-table td { border: 1px solid transparent; float: left; height: 40px; margin: 1px; padding: 3px; width: 40px; }
+.element { background: #d8d8d8; }
+.periodic-table .element { border: 1px solid #999; cursor: pointer; float: left; height: 40px; margin: 1px; padding: 3px; position: relative; width: 40px; }
+.periodic-table .element:hover,
+.periodic-table .element-highlighted { border: 2px solid #000; margin: 0; }
+.periodic-table .col2 { line-height: 40px; margin: 1px 2px; padding: 3px 12px 3px 0; width: 80px; } /* needs revising! */
+
+.non-metal { background: #68e841; }
+.noble-gas { background: #b8c1de; }
+.halogen { background: #e7e5b0; }
+.alkali-metal { background: #e79292; }
+.transition-metal { background: #E7C4C4; }
+.metalloid { background: #79a969; }
+.alkali-earth-metal { background: #ffec4c; }
+.post-transition-metal { background: #90cba3; }
+.lathanide { background: #ebb0ef; }
+.actinide { background: #d680db; }
+
+.element .atomic-number { font-size: 14px; }
+.element .heading { display: block; font: bold 18px arial; margin: 0; }
+
+.further-information { background-color: inherit; border: 1px solid #000; bottom: 0; color: #000; cursor: auto; display: block; left: 0; opacity: 0; overflow: hidden; position: absolute; right: 0; top: 0; transition: all .25s ease; -moz-transition: all .25s ease; z-index: -1; }
+.element-expanded .further-information { bottom: -110px; left: -110px; opacity: 1; right: -110px; top: -110px; z-index: 3; }
+
+.tabs-container { transition: all .25s ease; -moz-transition: all .25s ease; width: 570px; }
+.tab-container { float: left; height: 286px; position: relative; width: 285px; }
+.next, .previous { cursor: pointer; }
+.next { float: right; }
+.previous { float: left; }
+
+.yui3-tabview-list { background: url(/images/tab_bg.png) repeat-x top left; }
+.yui3-tab-label { background: url(/images/tab_bg.png) repeat-x top left; color: #fff; float: left; font-size: 12px; position: relative; }
+.yui3-tab-selected .yui3-tab-label:after { border: 4px solid transparent; border-top-color: #070156; content: ' '; left: 50%; margin: 0 0 0 -4px; position: absolute; top: 100%; }
+.yui3-tab-selected .yui3-tab-label { background: url(/images/tab_bg_selected.png) repeat-x top left; }
+.yui3-tabview-panel { margin: 6px 0 0 0; }
+
+.further-information .heading { border-bottom: 1px solid #515151; margin: 6px 3px 0 12px; padding: 0 0 6px 0 }
+.further-information .content { font-size: 13px; line-height: 16px; overflow: auto; padding: 3px 3px 6px 12px; }
+.further-information .content p { clear: both; float: left; margin: 4px 0; }
+.explore-link { 
+	background: #f5f5f5; 
+	background: linear-gradient(top, #f5f5f5 19%,#d6d6e1 100%); 
+	border-top: 1px solid #999; bottom: 0; color: inherit; font-size: 14px; height: 14px; left: 0; opacity: 0.9; padding: 8px 11px; position: absolute; right: 0; }
+.explore-link span { background-image: url('/images/wikipedia.jpg'); background-position: left center; background-repeat: no-repeat; opacity: 1; padding: 0 0 0 22px; }
+
+.key-list { margin: 5px 0; overflow: hidden; }
+.key-list li { float: left; margin: 2px 5px; width: 200px; }
+.key-list .element { float: none; }
+
+.footer { background: #eae6e6; border-top: 1px solid #c2bcbc; color: #666; float: left; padding: 20px 0; text-align: center; width: 100%; }
+.footer a { color: #000; text-decoration: none; }
+
+/* Responsive stuff */
+@media (min-width: 1200px) {
+	.centered { width: 1150px; }
+
+	.periodic-table .heading { font-size: 21px; }
+	.periodic-table th, .periodic-table td { height: 50px; width: 50px; }
+	.periodic-table .element { border: 1px solid #999; cursor: pointer; float: left; height: 50px; margin: 1px; padding: 3px; position: relative; width: 50px; }
+	.periodic-table .element:hover,
+	.periodic-table .element-highlighted { border: 2px solid #000; margin: 0; }
+
+	.v-align { overflow: hidden; display: table-cell; padding: 0 0 0 9px; vertical-align: middle; height: 59px; }
+}
+/* Responsive stuff */
+@media (min-width: 1400px) {
+	.centered { width: 1350px; }
+
+	.periodic-table .heading { font-size: 25px; margin-top: 5px; }
+	.periodic-table th, .periodic-table td { height: 60px; width: 61px; }
+	.periodic-table .element { border: 1px solid #999; cursor: pointer; float: left; height: 60px; margin: 1px; padding: 4px; position: relative; width: 59px; }
+	.periodic-table .element:hover,
+	.periodic-table .element-highlighted { border: 2px solid #000; margin: 0; }
+	.element .atomic-number { font-size: 17px; }
+
+	.key-list li { width: 182px; }
+	.v-align { overflow: hidden; display: table-cell; padding: 0 0 0 9px; vertical-align: middle; height: 69px; }
+}
