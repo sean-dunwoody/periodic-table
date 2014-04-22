@@ -8,7 +8,11 @@ module.exports = function(grunt) {
             // 2. Configuration for concatinating files goes here.
             basic: {
                 src: [
-                    'js/*.js' // All JS in the libs folder
+                    'js/ajax.js',
+                    'js/responsive-nav.js',
+                    'js/simple_tabs.js',
+                    'js/element.js',
+                    'js/default.js'
                 ],
                 dest: 'js/build/default.concat.js'
             }
