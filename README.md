@@ -19,4 +19,6 @@ There are lots of things I know can be improved, some of which are due to the lo
   - Improving the Canvas visualisation
   - Improving the basic description of all elements
 
+I've also included the GruntFile I'm using on this project, although it should work as-is without you needing to use this.
+
 I'd also like to hope that this project is a good place to start if you want to ease yourself into learning a little bit about JavaScript/Json, the code I've written definitely isn't as good as it could be, but I'm hoping that will improve in the not-too-distant future. When I'm happy with the quality of the code I'm hoping to package this up so it's easier to come at this from a beginners standpoint (maybe with an accompanying website). 
