@@ -3,19 +3,21 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Periodic table</title>
-        <link rel="stylesheet" type="text/css" href="/css/screen.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen">
     </head>
     <body>
 
     	<div class="navigation-container">
     	
-    		<ol id="main-nav">
-    			<li class="PageSelected"><a href="/">Periodic Table</a></li>
-    			<li><a href="about.html">About</a></li>
-    			<li><a href="download.html">Download</a></li>
-    			<li><a href="documentation.html">Documentation</a></li>
-    			<li><a href="information.html">Further Information</a></li>
-    		</ol>
+            <div class="centered navigation-container-inner">
+        		<ol id="main-nav" class="nav-collapse">
+        			<li class="PageSelected"><a href="/">Periodic Table</a></li>
+        			<li><a href="about.html">About</a></li>
+        			<li><a href="https://github.com/sean-dunwoody/periodic-table">Download</a></li>
+        		</ol>
+
+                <a href="#" id="element-close" title="Close all open elements">X</a>
+            </div>
     	
     	</div>
 
@@ -45,11 +47,9 @@
                 </tr>
             	<tr>
                 	<th>1</th>
-                	<td class="element non-metal" id="1">
+                	<td class="el non-metal" id="1">
                     	<span class="atomic-number">1</span>
                     	<span class="heading">H</span>
-    					<div class="further-information">
-    					</div>
                     </td>
                 	<td></td>
                 	<td></td>
@@ -67,26 +67,20 @@
                 	<td></td>
                 	<td></td>
                 	<td></td>
-                	<td class="element noble-gas" id="2">
+                	<td class="el noble-gas" id="2">
                     	<span class="atomic-number">2</span>
                     	<span class="heading">He</span>
-    					<div class="further-information">
-    					</div>
                     </td>
                 </tr>
             	<tr>
                 	<th>2</th>
-                	<td class="element alkali-metal" id="3">
+                	<td class="el alkali-metal" id="3">
                     	<span class="atomic-number">3</span>
                     	<span class="heading">Li</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element alkali-earth-metal" id="4">
+                	<td class="el alkali-earth-metal" id="4">
                     	<span class="atomic-number">4</span>
                     	<span class="heading">Be</span>
-    					<div class="further-information">
-    					</div>
                     </td>
                 	<td></td>
                 	<td></td>
@@ -98,56 +92,40 @@
                 	<td></td>
                 	<td></td>
                 	<td></td>
-                	<td class="element metalloid" id="5">
+                	<td class="el metalloid" id="5">
                     	<span class="atomic-number">5</span>
                     	<span class="heading">B</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element non-metal" id="6">
+                	<td class="el non-metal" id="6">
                     	<span class="atomic-number">6</span>
                     	<span class="heading">C</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element non-metal" id="7">
+                	<td class="el non-metal" id="7">
                     	<span class="atomic-number">7</span>
                     	<span class="heading">N</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element non-metal" id="8">
+                	<td class="el non-metal" id="8">
                     	<span class="atomic-number">8</span>
                     	<span class="heading">O</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element halogen" id="9">
+                	<td class="el halogen" id="9">
                     	<span class="atomic-number">9</span>
                     	<span class="heading">F</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element noble-gas" id="10">
+                	<td class="el noble-gas" id="10">
                     	<span class="atomic-number">10</span>
                     	<span class="heading">Ne</span>
-    					<div class="further-information">
-    					</div>
                     </td>
                 </tr>
             	<tr>
                 	<th>3</th>
-                	<td class="element alkali-metal" id="11">
+                	<td class="el alkali-metal" id="11">
                     	<span class="atomic-number">11</span>
                     	<span class="heading">Na</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element alkali-earth-metal" id="12">
+                	<td class="el alkali-earth-metal" id="12">
                     	<span class="atomic-number">12</span>
                     	<span class="heading">Mg</span>
-    					<div class="further-information">
-    					</div>
                     </td>
                 	<td></td>
                 	<td></td>
@@ -159,481 +137,329 @@
                 	<td></td>
                 	<td></td>
                 	<td></td>
-                	<td class="element post-transition-metal" id="13">
+                	<td class="el post-transition-metal" id="13">
                     	<span class="atomic-number">13</span>
                     	<span class="heading">Al</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element metalloid" id="14">
+                	<td class="el metalloid" id="14">
                     	<span class="atomic-number">14</span>
                     	<span class="heading">Si</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element non-metal" id="15">
+                	<td class="el non-metal" id="15">
                     	<span class="atomic-number">15</span>
                     	<span class="heading">P</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element non-metal" id="16">
+                	<td class="el non-metal" id="16">
                     	<span class="atomic-number">16</span>
                     	<span class="heading">S</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element halogen" id="17">
+                	<td class="el halogen" id="17">
                     	<span class="atomic-number">17</span>
                     	<span class="heading">Cl</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element noble-gas" id="18">
+                	<td class="el noble-gas" id="18">
                     	<span class="atomic-number">18</span>
                     	<span class="heading">Ar</span>
-    					<div class="further-information">
-    					</div>
                    </td>
                 </tr>
             	<tr>
                 	<th>4</th>
-                	<td class="element alkali-metal" id="19">
+                	<td class="el alkali-metal" id="19">
                     	<span class="atomic-number">19</span>
                     	<span class="heading">K</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element alkali-earth-metal" id="20">
+                	<td class="el alkali-earth-metal" id="20">
                     	<span class="atomic-number">20</span>
                     	<span class="heading">Ca</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="21">
+                	<td class="el transition-metal" id="21">
                     	<span class="atomic-number">21</span>
                     	<span class="heading">Sc</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="22">
+                	<td class="el transition-metal" id="22">
                     	<span class="atomic-number">22</span>
                     	<span class="heading">Ti</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="23">
+                	<td class="el transition-metal" id="23">
                     	<span class="atomic-number">23</span>
                     	<span class="heading">V</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="24">
+                	<td class="el transition-metal" id="24">
                     	<span class="atomic-number">24</span>
                     	<span class="heading">Cr</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="25">
+                	<td class="el transition-metal" id="25">
                     	<span class="atomic-number">25</span>
                     	<span class="heading">Mn</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="26">
+                	<td class="el transition-metal" id="26">
                     	<span class="atomic-number">26</span>
                     	<span class="heading">Fe</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="27">
+                	<td class="el transition-metal" id="27">
                     	<span class="atomic-number">27</span>
                     	<span class="heading">Co</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="28">
+                	<td class="el transition-metal" id="28">
                     	<span class="atomic-number">28</span>
                     	<span class="heading">Ni</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="29">
+                	<td class="el transition-metal" id="29">
                     	<span class="atomic-number">29</span>
                     	<span class="heading">Cu</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="20">
+                	<td class="el transition-metal" id="30">
                     	<span class="atomic-number">30</span>
                     	<span class="heading">Zn</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element post-transition-metal" id="31">
+                	<td class="el post-transition-metal" id="31">
                     	<span class="atomic-number">31</span>
                     	<span class="heading">Ga</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element metalloid" id="32">
+                	<td class="el metalloid" id="32">
                     	<span class="atomic-number">32</span>
                     	<span class="heading">Ge</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element metalloid" id="33">
+                	<td class="el metalloid" id="33">
                     	<span class="atomic-number">33</span>
                     	<span class="heading">As</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element non-metal" id="34">
+                	<td class="el non-metal" id="34">
                     	<span class="atomic-number">34</span>
                     	<span class="heading">Se</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element halogen" id="35">
+                	<td class="el halogen" id="35">
                     	<span class="atomic-number">35</span>
                     	<span class="heading">Br</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element noble-gas" id="36">
+                	<td class="el noble-gas" id="36">
                     	<span class="atomic-number">36</span>
                     	<span class="heading">Kr</span>
-    					<div class="further-information">
-    					</div>
                     </td>
                 </tr>
             	<tr>
                 	<th>5</th>
-                	<td class="element alkali-metal" id="37">
+                	<td class="el alkali-metal" id="37">
                     	<span class="atomic-number">37</span>
                     	<span class="heading">Rb</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element alkali-earth-metal" id="38">
+                	<td class="el alkali-earth-metal" id="38">
                     	<span class="atomic-number">38</span>
                     	<span class="heading">Sr</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="39">
+                	<td class="el transition-metal" id="39">
                     	<span class="atomic-number">39</span>
                     	<span class="heading">Y</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="40">
+                	<td class="el transition-metal" id="40">
                     	<span class="atomic-number">40</span>
                     	<span class="heading">Zr</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="41">
+                	<td class="el transition-metal" id="41">
                     	<span class="atomic-number">41</span>
                     	<span class="heading">Nb</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="42">
+                	<td class="el transition-metal" id="42">
                     	<span class="atomic-number">42</span>
                     	<span class="heading">Mo</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="43">
+                	<td class="el transition-metal" id="43">
                     	<span class="atomic-number">43</span>
                     	<span class="heading">Tc</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="44">
+                	<td class="el transition-metal" id="44">
                     	<span class="atomic-number">44</span>
                     	<span class="heading">Ru</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="45">
+                	<td class="el transition-metal" id="45">
                     	<span class="atomic-number">45</span>
                     	<span class="heading">Rh</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="46">
+                	<td class="el transition-metal" id="46">
                     	<span class="atomic-number">46</span>
                     	<span class="heading">Pd</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="47">
+                	<td class="el transition-metal" id="47">
                     	<span class="atomic-number">47</span>
                     	<span class="heading">Ag</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="48">
+                	<td class="el transition-metal" id="48">
                     	<span class="atomic-number">48</span>
                     	<span class="heading">Cd</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element post-transition-metal" id="49">
+                	<td class="el post-transition-metal" id="49">
                     	<span class="atomic-number">49</span>
                     	<span class="heading">In</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element post-transition-metal" id="50">
+                	<td class="el post-transition-metal" id="50">
                     	<span class="atomic-number">50</span>
                     	<span class="heading">Sn</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element metalloid" id="51">
+                	<td class="el metalloid" id="51">
                     	<span class="atomic-number">51</span>
                     	<span class="heading">Sb</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element metalloid" id="52">
+                	<td class="el metalloid" id="52">
                     	<span class="atomic-number">52</span>
                     	<span class="heading">Te</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element halogen" id="53">
+                	<td class="el halogen" id="53">
                     	<span class="atomic-number">53</span>
                     	<span class="heading">I</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element noble-gas" id="54">
+                	<td class="el noble-gas" id="54">
                     	<span class="atomic-number">54</span>
                     	<span class="heading">Xe</span>
-    					<div class="further-information">
-    					</div>
                     </td>
                 </tr>
             	<tr>
                 	<th>6</th>
-                	<td class="element alkali-metal" id="55">
+                	<td class="el alkali-metal" id="55">
                     	<span class="atomic-number">55</span>
                     	<span class="heading">Cs</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element alkali-earth-metal" id="56">
+                	<td class="el alkali-earth-metal" id="56">
                     	<span class="atomic-number">56</span>
                     	<span class="heading">Ba</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element lathanide">
+                	<td class="el lathanide">
                     	<span class="atomic-number">57-71</span>
                     	<span class="heading"></span>
                     </td>
-                	<td class="element transition-metal">
+                	<td class="el transition-metal" id="72">
                     	<span class="atomic-number">72</span>
                     	<span class="heading">Hf</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="73">
+                	<td class="el transition-metal" id="73">
                     	<span class="atomic-number">73</span>
                     	<span class="heading">Ta</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="74">
+                	<td class="el transition-metal" id="74">
                     	<span class="atomic-number">74</span>
                     	<span class="heading">W</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="75">
+                	<td class="el transition-metal" id="75">
                     	<span class="atomic-number">75</span>
                     	<span class="heading">Re</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="76">
+                	<td class="el transition-metal" id="76">
                     	<span class="atomic-number">76</span>
                     	<span class="heading">Os</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="77">
+                	<td class="el transition-metal" id="77">
                     	<span class="atomic-number">77</span>
                     	<span class="heading">Ir</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="78">
+                	<td class="el transition-metal" id="78">
                     	<span class="atomic-number">78</span>
                     	<span class="heading">Pt</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="79">
+                	<td class="el transition-metal" id="79">
                     	<span class="atomic-number">79</span>
                     	<span class="heading">Au</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="80">
+                	<td class="el transition-metal" id="80">
                     	<span class="atomic-number">80</span>
                     	<span class="heading">Hg</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element post-transition-metal" id="81">
+                	<td class="el post-transition-metal" id="81">
                     	<span class="atomic-number">81</span>
                     	<span class="heading">Tl</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element post-transition-metal" id="82">
+                	<td class="el post-transition-metal" id="82">
                     	<span class="atomic-number">82</span>
                     	<span class="heading">Pb</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element post-transition-metal" id="83">
+                	<td class="el post-transition-metal" id="83">
                     	<span class="atomic-number">83</span>
                     	<span class="heading">Bi</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element metalloid" id="84">
+                	<td class="el metalloid" id="84">
                     	<span class="atomic-number">84</span>
                     	<span class="heading">Po</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element halogen" id="85">
+                	<td class="el halogen" id="85">
                     	<span class="atomic-number">85</span>
                     	<span class="heading">At</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element noble-gas" id="86">
+                	<td class="el noble-gas" id="86">
                     	<span class="atomic-number">86</span>
                     	<span class="heading">Rn</span>
-    					<div class="further-information">
-    					</div>
                     </td>
                 </tr>
             	<tr>
                 	<th>7</th>
-                	<td class="element alkali-metal" id="87">
+                	<td class="el alkali-metal" id="87">
                     	<span class="atomic-number">87</span>
                     	<span class="heading">Fr</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element alkali-earth-metal" id="88">
+                	<td class="el alkali-earth-metal" id="88">
                     	<span class="atomic-number">88</span>
                     	<span class="heading">Ra</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element actinide">
+                	<td class="el actinide">
                     	<span class="atomic-number">89-103</span>
                     	<span class="heading"></span>
                     </td>
-                	<td class="element transition-metal" id="104">
+                	<td class="el transition-metal" id="104">
                     	<span class="atomic-number">104</span>
                     	<span class="heading">Rf</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="105">
+                	<td class="el transition-metal" id="105">
                     	<span class="atomic-number">105</span>
                     	<span class="heading">Db</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="106">
+                	<td class="el transition-metal" id="106">
                     	<span class="atomic-number">106</span>
                     	<span class="heading">Sg</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="107">
+                	<td class="el transition-metal" id="107">
                     	<span class="atomic-number">107</span>
                     	<span class="heading">Bh</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="108">
+                	<td class="el transition-metal" id="108">
                     	<span class="atomic-number">108</span>
                     	<span class="heading">Hs</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element unknown" id="109">
+                	<td class="el unknown" id="109">
                     	<span class="atomic-number">109</span>
                     	<span class="heading">Mt</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element unknown" id="110">
+                	<td class="el unknown" id="110">
                     	<span class="atomic-number">110</span>
                     	<span class="heading">Ds</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element unknown" id="111">
+                	<td class="el unknown" id="111">
                     	<span class="atomic-number">111</span>
                     	<span class="heading">Rg</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element transition-metal" id="112">
+                	<td class="el transition-metal" id="112">
                     	<span class="atomic-number">112</span>
                     	<span class="heading">Cn</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element unknown" id="113">
+                	<td class="el unknown" id="113">
                     	<span class="atomic-number">113</span>
                     	<span class="heading">Uut</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element unknown" id="114">
+                	<td class="el unknown" id="114">
                     	<span class="atomic-number">114</span>
                     	<span class="heading">Fl</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element unknown" id="115">
+                	<td class="el unknown" id="115">
                     	<span class="atomic-number">115</span>
                     	<span class="heading">Uup</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element unknown" id="116">
+                	<td class="el unknown" id="116">
                     	<span class="atomic-number">116</span>
                     	<span class="heading">Lv</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element unknown" id="117">
+                	<td class="el unknown" id="117">
                     	<span class="atomic-number">117</span>
                     	<span class="heading">Uus</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element unknown" id="118">
+                	<td class="el unknown" id="118">
                     	<span class="atomic-number">118</span>
                     	<span class="heading">Uuo</span>
-    					<div class="further-information">
-    					</div>
                     </td>
                 </tr>
             	<tr>
@@ -660,190 +486,130 @@
             	<tr>
                 	<td></td>
                 	<th class="col2" colspan="2">Lathanides</th>
-                	<td class="element lathanide" id="57">
+                	<td class="el lathanide" id="57">
                     	<span class="atomic-number">57</span>
                     	<span class="heading">La</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element lathanide" id="58">
+                	<td class="el lathanide" id="58">
                     	<span class="atomic-number">58</span>
                     	<span class="heading">Ce</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element lathanide" id="59">
+                	<td class="el lathanide" id="59">
                     	<span class="atomic-number">59</span>
                     	<span class="heading">Pr</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element lathanide" id="60">
+                	<td class="el lathanide" id="60">
                     	<span class="atomic-number">60</span>
                     	<span class="heading">Nd</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element lathanide" id="61">
+                	<td class="el lathanide" id="61">
                     	<span class="atomic-number">61</span>
                     	<span class="heading">Pm</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element lathanide" id="62">
+                	<td class="el lathanide" id="62">
                     	<span class="atomic-number">62</span>
                     	<span class="heading">Sm</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element lathanide" id="63">
+                	<td class="el lathanide" id="63">
                     	<span class="atomic-number">63</span>
                     	<span class="heading">Eu</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element lathanide" id="64">
+                	<td class="el lathanide" id="64">
                     	<span class="atomic-number">64</span>
                     	<span class="heading">Gd</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element lathanide" id="65">
+                	<td class="el lathanide" id="65">
                     	<span class="atomic-number">65</span>
                     	<span class="heading">Tb</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element lathanide" id="66">
+                	<td class="el lathanide" id="66">
                     	<span class="atomic-number">66</span>
                     	<span class="heading">Dy</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element lathanide" id="67">
+                	<td class="el lathanide" id="67">
                     	<span class="atomic-number">67</span>
                     	<span class="heading">Ho</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element lathanide" id="68">
+                	<td class="el lathanide" id="68">
                     	<span class="atomic-number">68</span>
                     	<span class="heading">Er</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element lathanide" id="69">
+                	<td class="el lathanide" id="69">
                     	<span class="atomic-number">69</span>
                     	<span class="heading">Tm</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element lathanide" id="70">
+                	<td class="el lathanide" id="70">
                     	<span class="atomic-number">70</span>
                     	<span class="heading">Yb</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element lathanide" id="71">
+                	<td class="el lathanide" id="71">
                     	<span class="atomic-number">71</span>
                     	<span class="heading">Lu</span>
-    					<div class="further-information">
-    					</div>
                     </td>
                 	<td></td>
                 </tr>
             	<tr>
                 	<td></td>
                 	<th class="col2" colspan="2">Actinides</th>
-                	<td class="element actinide" id="89">
+                	<td class="el actinide" id="89">
                     	<span class="atomic-number">89</span>
                     	<span class="heading">Ac</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element actinide" id="90">
+                	<td class="el actinide" id="90">
                     	<span class="atomic-number">90</span>
                     	<span class="heading">Th</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element actinide" id="91">
+                	<td class="el actinide" id="91">
                     	<span class="atomic-number">91</span>
                     	<span class="heading">Pa</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element actinide" id="92">
+                	<td class="el actinide" id="92">
                     	<span class="atomic-number">92</span>
                     	<span class="heading">U</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element actinide" id="93">
+                	<td class="el actinide" id="93">
                     	<span class="atomic-number">93</span>
                     	<span class="heading">Np</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element actinide" id="94">
+                	<td class="el actinide" id="94">
                     	<span class="atomic-number">94</span>
                     	<span class="heading">Pu</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element actinide" id="95">
+                	<td class="el actinide" id="95">
                     	<span class="atomic-number">95</span>
                     	<span class="heading">Am</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element actinide" id="96">
+                	<td class="el actinide" id="96">
                     	<span class="atomic-number">96</span>
                     	<span class="heading">Cm</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element actinide" id="97">
+                	<td class="el actinide" id="97">
                     	<span class="atomic-number">97</span>
                     	<span class="heading">Bk</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element actinide" id="98">
+                	<td class="el actinide" id="98">
                     	<span class="atomic-number">98</span>
                     	<span class="heading">Cf</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element actinide" id="99">
+                	<td class="el actinide" id="99">
                     	<span class="atomic-number">99</span>
                     	<span class="heading">Es</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element actinide" id="100">
+                	<td class="el actinide" id="100">
                     	<span class="atomic-number">100</span>
                     	<span class="heading">Fm</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element actinide" id="101">
+                	<td class="el actinide" id="101">
                     	<span class="atomic-number">101</span>
                     	<span class="heading">Md</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element actinide" id="102">
+                	<td class="el actinide" id="102">
                     	<span class="atomic-number">102</span>
                     	<span class="heading">No</span>
-    					<div class="further-information">
-    					</div>
                     </td>
-                	<td class="element actinide" id="103">
+                	<td class="el actinide" id="103">
                     	<span class="atomic-number">103</span>
                     	<span class="heading">Lr</span>
-    					<div class="further-information">
-    					</div>
                     </td>
                 	<td></td>
                 </tr>
@@ -855,43 +621,43 @@
     			
     			<ul class="key-list">
     				<li>
-    					<div class="element key-element non-metal v-align" id="non-metal"></div>
+    					<div class="el key-el non-metal v-align" id="non-metal"></div>
     					<span class="v-align">Non-metal</span>
     				</li>
     				<li>
-    					<div class="element key-element noble-gas v-align" id="noble-gas"></div>
+    					<div class="el key-el noble-gas v-align" id="noble-gas"></div>
     					<span class="v-align">Noble gas</span>
     				</li>
     				<li>
-    					<div class="element key-element halogen v-align" id="halogen"></div>
+    					<div class="el key-el halogen v-align" id="halogen"></div>
     					<span class="v-align">halogen</span>
     				</li>
     				<li>
-    					<div class="element key-element alkali-metal v-align" id="alkali-metal"></div>
+    					<div class="el key-el alkali-metal v-align" id="alkali-metal"></div>
     					<span class="v-align">Alkali metal</span>
     				</li>
     				<li>
-    					<div class="element key-element transition-metal v-align" id="transition-metal"></div>
+    					<div class="el key-el transition-metal v-align" id="transition-metal"></div>
     					<span class="v-align">Transition metal</span>
     				</li>
     				<li>
-    					<div class="element key-element metalloid v-align" id="metalloid"></div>
+    					<div class="el key-el metalloid v-align" id="metalloid"></div>
     					<span class="v-align">Metalloid</span>
     				</li>
     				<li>
-    					<div class="element key-element alkali-earth-metal v-align" id="alkali-earth-metal"></div>
+    					<div class="el key-el alkali-earth-metal v-align" id="alkali-earth-metal"></div>
     					<span class="v-align">Alkali earth metal</span>
     				</li>
     				<li>
-    					<div class="element key-element post-transition-metal v-align" id="post-transition-metal"></div>
+    					<div class="el key-el post-transition-metal v-align" id="post-transition-metal"></div>
     					<span class="v-align">Post transition metal</span>
     				</li>
     				<li>
-    					<div class="element key-element lathanide v-align" id="lathanide"></div>
+    					<div class="el key-el lathanide v-align" id="lathanide"></div>
     					<span class="v-align">lathanide</span>
     				</li>
     				<li>
-    					<div class="element key-element actinide v-align" id="actinide"></div>
+    					<div class="el key-el actinide v-align" id="actinide"></div>
     					<span class="v-align">actinide</span>
     				</li>
     			</ul>
@@ -906,10 +672,14 @@
             </div>
         </div>
     	
-        <!--[if !lte IE 8]>
-            <span style="color: red; font-size: 30px">HELLO IE8-</span>
-        <![endif]-->
-       <script src="/js/default2.js" type="text/JavaScript"></script>
+        <script src="js/responsive-nav.js"></script>
+        <script src="js/ajax.js"></script>
+        <script src="js/simple_tabs.js"></script>
+        <script src="js/element.js"></script>
+        <script src="js/default.js"></script>
+        <!--
+            <script src="js/build/default.min.js"></script>
+        -->
 
     </body>
 </html>

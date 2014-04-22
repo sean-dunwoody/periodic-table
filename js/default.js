@@ -1,109 +1,92 @@
-// canvas functions
-var isOdd = function(someNumber){
-	return (someNumber%2 == 1) ? true : false;
-};
-function draw(aNumber, aWeight) {
-	var protons  = aNumber;
-	var neutrons = Math.round(aWeight)-aNumber;
-	var nucleons = protons+Math.round(neutrons);
-	var rows   = Math.round(Math.sqrt(nucleons));
-	var cols   = Math.ceil(Math.sqrt(nucleons));
-	var radius = 55/(Math.ceil(Math.sqrt(nucleons)));
-	var circumference = radius*2;
-	for(var i=1;i<rows+1;i++) {
-		for(var j=1;j<cols+1;j++) {
-			if(isOdd(j) && protons>0) {
-				ctx.fillStyle = "#ff0000";	
-				protons--;
-			}
-			else if(neutrons>0) {
-				ctx.fillStyle = "#0000ff";
-				neutrons--;	
-			}
-			else if(neutrons+protons==0) {
-				ctx.fillStyle = "#ffffff";		
-			}
-			ctx.beginPath();
-			ctx.arc( j*circumference, i*circumference, radius, 0, Math.PI*2, false );
-			ctx.fill();
+
+// Setup the responsive navigation menu
+var navigation = responsiveNav(".nav-collapse");
+
+// Get all of the elements in the table
+var elements = document.getElementsByClassName('el');
+// Get the "close all elements" button
+var closeAll = document.getElementById('element-close');
+
+// loop the elements and add appropriate event listeners
+var l = elements.length;
+var i = 0;
+var openedElements = [];
+var focusedElements;
+for(i; i<l; i++) {
+	elements[i].addEventListener('click', function(event) {
+		event.stopPropagation();
+		var elementId = this.id;		 // this is the ID of the HTML element
+		var htmlElementId = this.id - 1; // as the array is zero indexed, to refer to the array item we need to -1 from the HTML ID (it's dirty but I'm not sure there's a better way)
+		console.log(htmlElementId);
+		// Instantiate a new element if one has not already been instantiated
+		if(!elements[htmlElementId].classList.contains('el-expanded')) {
+			openedElements.push(new element(elementId));
+			console.log(this.id);
+			this.classList.add('el-focus', 'el-loaded'); // add a class we can use to detect if an ajax request has been made in the past
+			console.log(this.classList);
 		}
-	}
+		// focus the current element
+		focusedElements = document.getElementsByClassName('el-focus');
+		while (focusedElements.length) {
+			focusedElements[0].classList.remove('el-focus');
+		}
+		console.log(elements[htmlElementId]);
+		this.classList.add('el-focus');
+		closeAll.classList.add('visible');
+	}, false);
 }
+console.log(openedElements);
 
-
-// YUI stuff
-YUI().use('node', 'event', 'anim', 'anim-base', 'transition', 'io', 'tabview', function(Y) {
-
-	var tabviews = {};
-	var tableElements = Y.all('.periodic-table td[id]');
-	
-	function complete(id, o, tabbedContent, atomicNumber) {
-		var id = id; // Transaction ID.
-		var data = o.responseText; // Response data.
-		tabbedContent.setHTML(data);
-		if (!tabviews[atomicNumber]) {
-			tabviews[atomicNumber] = new Y.TabView({
-				srcNode: '#tabs-'+atomicNumber
-			});
-			tabviews[atomicNumber].render();
+// Code for closing all elements at once
+closeAll.addEventListener('click', function(event) {
+	event.preventDefault();
+	var numElements = openedElements.length;
+	for(var i = numElements - 1; i >= 0; i--) {
+		openedElements[i].close();
+		// this seems ineffecient, but apparently it's (probably) the best way in our circumstances
+		// see http://stackoverflow.com/questions/1232040/how-to-empty-an-array-in-javascript for more
+		openedElements.pop();
+	}
+	closeAll.classList.remove('visible');
+}, false);
+// Code for closing elements (could do with changing)
+document.body.addEventListener('click', function(event) {
+	try {
+		// hide the element
+		var lastOpened = openedElements[openedElements.length-1];
+		lastOpened.close();
+		// remove the element from the opened array
+		openedElements.pop();
+		// if there are now no open elements then hide the close button
+		if(openedElements.length == 0) {
+			closeAll.classList.remove('visible');
 		}
+	} catch(ex) {
+		// No items expanded!
+	}
+}, false);
 
-		var nextButton = tabbedContent.one('.next');
-		nextButton.on("click", function(e) {
-			tabbedContent.setStyle('margin-left', '-240px');
-		});				
-		//var prevButton = this.one('.previous');	
-	};
-	
-	tableElements.each(
-		function() {
 
-			var extraContent  = this.one('.further-information');
-			var tabbedContent = this.one('.tabs-container');
-
-			this.on("click", function(e) {
-				if(extraContent.hasClass('further-information-expanded')) {
-					return;
-				}
-				var atomicNumber = this.get('id');
-				var uri = "dynamicLoad.php?AtomicNumber="+atomicNumber;
-				extraContent.addClass("further-information-expanded");
-				extraContent.transition({
-					duration: 0.32, // seconds
-					easing: 'ease-in',
-					top: '-110px',
-					right: '-110px',
-					bottom: '-110px',
-					left: '-110px',
-					color: {
-						delay: 0.32,
-						duration: 0.24,
-						value: '#000',
-						easing: 'ease-in'
-					}
-				});
-				Y.on('io:complete', complete, Y, tabbedContent, atomicNumber);
-				var request = Y.io(uri);	
-
-			});
-			this.on('clickoutside', function () {
-				extraContent.transition({
-					duration: 0.3, // seconds
-					easing: 'ease-out',
-					bottom: '0px',
-					left: '0px',
-					right: '0px',
-					top: '0px',
-					color: 'transparent'
-				}, function () {
-					this.removeClass('further-information-expanded');
-				});
-				
-			});
-			
+// Needs Refactoring
+var elementsKey = document.getElementsByClassName("key-el");
+var l = elementsKey.length;
+var i = 0;
+for(i; i<l; i++) {
+	elementsKey[i].addEventListener('mouseover', function(event) {
+		var highlightedElements = document.getElementsByClassName(this.id);
+		var le = highlightedElements.length;
+		var ie = 0;
+		for(ie; ie<le; ie++) {
+			highlightedElements[ie].classList.add("el-highlighted");
 		}
-	);
+	}, false);
 
-	
-});
-
+	elementsKey[i].addEventListener('mouseout', function(event) {
+		var highlightedElements = document.getElementsByClassName(this.id);
+		var le = highlightedElements.length;
+		var ie = 0;
+		for(ie; ie<le; ie++) {
+			highlightedElements[ie].classList.remove("el-highlighted");
+		}
+	}, false);
+}

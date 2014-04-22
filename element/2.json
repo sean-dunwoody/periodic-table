@@ -1,17 +1,1 @@
-{
-    "element": [
-        {
-            "ElementSymbol": "H",
-            "ElementName": "Hydrogen",
-            "AtomicNumber": "2",
-            "AtomicWeight": "",
-            "Protons": "",
-            "Neutrons": "",
-            "Electrons": "",
-            "BoilingPoint": "",
-            "MeltingPoint": "",
-            "MoreInfoLink": "",
-            "BriefDescription": ""
-        }
-    ]
-}
+{"element":{"ElementSymbol":"He","ElementName":"Helium","AtomicNumber":2,"AtomicWeight":4.0026,"PhysicalProperties":[{"Property":["Melting point","0.95"],"PropertyType":["Kelvin","K"]},{"Property":["Boiling point","4.22"],"PropertyType":["Kelvin","K"]}],"MoreInfoLink":"http:\/\/en.wikipedia.org\/wiki\/Helium","BriefDescription":"<p>Helium is both the second lightest and abundant element in the universe.<\/p>\r\n\r\n<p>Its largest use is in Cryogenics (studying the behaviour of materials at very low temperatures), however, as I'm sure you know, it is also commonly used to fill floating balloons; this effect is due to Helium atoms being lighter than Oxygen atoms.<\/p>"}}

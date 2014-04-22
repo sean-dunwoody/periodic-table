@@ -1,17 +1,1 @@
-{
-    "element": [
-        {
-            "ElementSymbol": "H",
-            "ElementName": "Hydrogen",
-            "AtomicNumber": "1",
-            "AtomicWeight": "1.00794",
-            "Protons": "1",
-            "Neutrons": "1.00794",
-            "Electrons": "1",
-            "BoilingPoint": "14.01 (-259.14 &deg;C)",
-            "MeltingPoint": "20.28 (-252.87 &deg;C)",
-            "MoreInfoLink": "http://en.wikipedia.org/wiki/Hydrogen",
-            "BriefDescription": ""
-        }
-    ]
-}
+{"element":{"ElementSymbol":"H","ElementName":"Hydrogen","AtomicNumber":1,"AtomicWeight":1.00794,"PhysicalProperties":[{"Property":["Melting point","14.01"],"PropertyType":["Kelvin","K"]},{"Property":["Boiling point","20.28"],"PropertyType":["Kelvin","K"]}],"MoreInfoLink":"http:\/\/en.wikipedia.org\/wiki\/Hydrogen","BriefDescription":"<p>Hydrogen is the lightest and most abundant element in the periodic table.<\/p>\r\n\r\n<p>Hydrogen has many practical uses, most notable would be its use in the petroleum industry in various chemical reactions.<\/p>\r\n \r\n<p>Hydrogen could also be used as an energy source, either through the use of nuclear fusion or burned to run a combustion engine.<\/p>"}}
