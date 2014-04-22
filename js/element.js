@@ -108,7 +108,7 @@ function element(elementId) {
 			+'			</ul>'
 			+'			<ul class="tabs-content">'
 			+'				<li class="tab-content tab-1 tab-visible" id="'+ this.jsonElement.AtomicNumber +'-tab-1">' + this.jsonElement.BriefDescription + '</li>'
-			+'				<li class="tab-content tab-2 tab-visible" id="'+ this.jsonElement.AtomicNumber +'-tab-2"><canvas id="visualise-'+ this.jsonElement.AtomicNumber +'" width="260" height="210"></canvas><p>Red = Proton | Blue = Neutron</li>'
+			+'				<li class="tab-content tab-2 tab-visible" id="'+ this.jsonElement.AtomicNumber +'-tab-2"><canvas id="visualise-'+ this.jsonElement.AtomicNumber +'" width="250" height="190"></canvas><p>Red = Proton | Blue = Neutron</li>'
 			//+'				<li class="tab-content tab-3 tab-visible" id="'+ this.jsonElement.AtomicNumber +'-tab-3">Tab three content</li>'
 			+'			</ul>'
 			+'		</div>'
