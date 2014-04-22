@@ -16,9 +16,12 @@ ol, ul { list-style: none; }
 table { border-collapse: collapse; border-spacing: 0; }
 /* CSS reset ends */
 
-html { overflow-y: scroll; }
-body { font-family: arial; }
-#wrapper { padding: 10px 0 50px 0; }
+html { height:100%; overflow-y: scroll; }
+body { height:100%; font-family: arial; }
+
+#container { min-height: 100%; position: relative; }
+   
+#wrapper { padding: 10px 0 90px 0; }
 .v-align { display: inline-block; vertical-align: middle; }
 .centered { clear: both; margin: 0 auto; width: 980px; }
 
@@ -126,7 +129,7 @@ body { font-family: arial; }
 .key-list li { float: left; margin: 2px 5px; width: 200px; }
 .key-list .el { float: none; }
 
-.footer { background: #eae6e6; border-top: 1px solid #c2bcbc; color: #666; float: left; padding: 20px 0; text-align: center; width: 100%; }
+.footer { background: #eae6e6; border-top: 1px solid #c2bcbc; bottom: 0; color: #666; float: left; height: 16px; padding: 20px 0; position: absolute; text-align: center; width: 100%; }
 .footer a { color: #000; text-decoration: none; }
 
 /* Responsive stuff */
