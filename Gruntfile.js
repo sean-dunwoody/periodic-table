@@ -14,13 +14,13 @@ module.exports = function(grunt) {
                     'js/element.js',
                     'js/default.js'
                 ],
-                dest: 'js/build/default.concat.js'
+                dest: 'dist/js/default.concat.js'
             }
         },
         uglify: {
             build: {
-                src: 'js/build/default.concat.js',
-                dest: 'js/build/default.min.js'
+                src: 'dist/js/default.concat.js',
+                dest: 'dist/js/default.min.js'
             }
         },
         cssmin: {
