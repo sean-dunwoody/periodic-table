@@ -28,7 +28,7 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: 'css',
                 src: ['*.css', '!*.min.css'],
-                dest: 'css',
+                dest: 'dist/css',
                 ext: '.min.css'
             }
         },
@@ -41,6 +41,18 @@ module.exports = function(grunt) {
                     src: ['*.{png,jpg,jpeg,gif}'],
                     dest: 'images/build'
                 }]
+            }
+        },
+        htmlmin: {
+            dist: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: {                                   // Dictionary of files
+                    'dist/index.html': 'index.html',     // 'destination': 'source'
+                    'dist/about.html': 'about.html'
+                }
             }
         },
         watch: {
@@ -60,9 +72,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['concat', 'uglify', 'cssmin', 'imagemin']);
+    grunt.registerTask('default', ['concat', 'uglify', 'cssmin', 'imagemin', 'htmlmin']);
 
 };
