@@ -27,12 +27,13 @@ body { height:100%; font-family: arial; }
 
 .navigation-container { background: #eae6e6; border-bottom: 1px solid #c2bcbc; float: left; width: 100%; }
 .navigation-container-inner { position: relative; }
-#main-nav { margin: 30px 0 -1px 0; overflow: hidden; text-align: center; }
+#main-nav { overflow: hidden; text-align: center; }
 #main-nav li { display: inline-block; }
 #main-nav a,
-.nav-toggle { color: #525252; display: block; font: bold 16px arial; margin: 0 22px; padding: 18px 5px; text-decoration: none; }
-#main-nav a:hover, #main-nav li.PageSelected a { color: #000; }
-#main-nav .PageSelected a { background-image: url('/images/nav_bg.png'); background-position: bottom center; background-repeat: no-repeat; }
+.nav-toggle { color: #525252; display: block; font: bold 16px arial; margin: 0 10px; padding: 18px 17px; text-decoration: none; }
+#main-nav a:hover,
+#main-nav .PageSelected a { color: #000; }
+#main-nav .PageSelected a { border-top: 8px solid #C2BCBC; padding-top: 10px; }
 #element-close { background: #C2BCBC; border-radius: 6px; color: #000;display: none; padding: 6px 8px; position: absolute; right: 5%; text-decoration: none; top: 0; }
 #element-close.visible { display: block; }
 /*! responsive-nav.js 1.0.32 by @viljamis */
