@@ -89,12 +89,6 @@ body { height:100%; font-family: arial; }
 .next {  }
 .prev { background-position: 0 -28px; }
 
-.yui3-tabview-list { background: url(/images/tab_bg.png) repeat-x top left; }
-.yui3-tab-label { background: url(/images/tab_bg.png) repeat-x top left; color: #fff; float: left; font-size: 12px; position: relative; }
-.yui3-tab-selected .yui3-tab-label:after { border: 4px solid transparent; border-top-color: #070156; content: ' '; left: 50%; margin: 0 0 0 -4px; position: absolute; top: 100%; }
-.yui3-tab-selected .yui3-tab-label { background: url(/images/tab_bg_selected.png) repeat-x top left; }
-.yui3-tabview-panel { margin: 6px 0 0 0; }
-
 .further-information .heading { border-bottom: 1px solid #515151; margin: 6px 3px 0 12px; padding: 0 0 6px 0 }
 .further-information .content { font-size: 13px; line-height: 16px; overflow: hidden; padding: 3px 3px 6px 12px; }
 .further-information .content p { clear: both; float: left; margin: 4px 0; }
