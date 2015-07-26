@@ -36,7 +36,7 @@ body { height:100%; font-family: arial; }
 #main-nav .PageSelected a { border-top: 8px solid #C2BCBC; padding-top: 10px; }
 #element-close { background: #C2BCBC; border-radius: 6px; color: #000;display: none; padding: 6px 8px; position: absolute; right: 5%; text-decoration: none; top: 0; }
 #element-close.visible { display: block; }
-/*! responsive-nav.js 1.0.32 by @viljamis */
+/* responsive-nav.js 1.0.32 by @viljamis */
 .js .nav-collapse { clip: rect(0 0 0 0); display: block; max-height: 0; overflow: hidden; position: absolute; zoom: 1; }
 .nav-collapse.opened { max-height: 9999px; }
 .disable-pointer-events { pointer-events: none !important; }
