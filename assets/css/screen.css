@@ -25,32 +25,6 @@ body { height:100%; font-family: arial; }
 .v-align { display: inline-block; vertical-align: middle; }
 .centered { clear: both; margin: 0 auto; width: 980px; }
 
-.navigation-container { background: #eae6e6; border-bottom: 1px solid #c2bcbc; float: left; width: 100%; }
-.navigation-container-inner { position: relative; }
-#main-nav { overflow: hidden; text-align: center; }
-#main-nav li { display: inline-block; }
-#main-nav a,
-.nav-toggle { color: #525252; display: block; font: bold 16px arial; margin: 0 10px; padding: 18px 17px; text-decoration: none; }
-#main-nav a:hover,
-#main-nav .PageSelected a { color: #000; }
-#main-nav .PageSelected a { border-top: 8px solid #C2BCBC; padding-top: 10px; }
-#element-close { background: #C2BCBC; border-radius: 6px; color: #000;display: none; padding: 6px 8px; position: absolute; right: 5%; text-decoration: none; top: 0; }
-#element-close.visible { display: block; }
-/* responsive-nav.js 1.0.32 by @viljamis */
-.js .nav-collapse { clip: rect(0 0 0 0); display: block; max-height: 0; overflow: hidden; position: absolute; zoom: 1; }
-.nav-collapse.opened { max-height: 9999px; }
-.disable-pointer-events { pointer-events: none !important; }
-.nav-toggle { -webkit-tap-highlight-color: rgba(0,0,0,0); }
-@media screen and (min-width: 800px) {
-	.js .nav-collapse { position: relative; }
-	.js .nav-collapse.closed { max-height: none; }
-	.nav-toggle { display: none; }
-}
-@media screen and (max-width: 800px) {
-	.nav-collapse ul { display: block; list-style: none; margin: 0; padding: 0; width: 100%; }
-	.nav-collapse li { display: block; width: 100%; }
-}
-
 .page-content { line-height: 1.4; padding: 1% 9%; }
 .page-content p { margin: 20px 0; }
 
@@ -78,46 +52,6 @@ body { height:100%; font-family: arial; }
 
 .el .atomic-number { font-size: 14px; }
 .el .heading { display: block; font: bold 18px arial; margin: 0; }
-
-.further-information { background-color: inherit; border: 1px solid #000; bottom: 0; color: #000; cursor: auto; display: block; left: 0; opacity: 0; overflow: hidden; position: absolute; right: 0; top: 0; transition: all .25s ease; -moz-transition: all .25s ease; z-index: -1; }
-.el-expanded .further-information { bottom: -110px; left: -110px; opacity: 1; right: -110px; top: -110px; z-index: 3; }
-.el-focus .further-information { z-index: 200 !important; }
-
-.tabs-container { bottom: 0; position: absolute; top: 0; transition: all .25s ease; -moz-transition: all .25s ease; width: 200%; }
-.tab-container { float: left; height: 100%; position: relative; width: 50%; }
-.arrow { background: url('../images/arrows.png') no-repeat 0 0; color: transparent; cursor: pointer; height: 28px; position: absolute; right: 0; top: 0; width: 30px; }
-.next {  }
-.prev { background-position: 0 -28px; }
-
-.further-information .heading { border-bottom: 1px solid #515151; margin: 6px 3px 0 12px; padding: 0 0 6px 0 }
-.further-information .content { font-size: 13px; line-height: 16px; overflow: hidden; padding: 3px 3px 6px 12px; }
-.further-information .content p { clear: both; float: left; margin: 4px 0; }
-.explore-link { 
-	background: #f5f5f5; 
-	background: linear-gradient(top, #f5f5f5 19%, #d6d6e1 100%); 
-	border-top: 1px solid #999;
-	bottom: 0;
-	color: inherit;
-	font-size: 14px;
-	left: 0;
-	opacity: 0.9;
-	padding: 8px 11px;
-	position: absolute;
-	right: 0;
-	text-align: center;
-}
-.explore-link span { background-image: url('/images/wikipedia.jpg'); background-position: left center; background-repeat: no-repeat; opacity: 1; padding: 0 0 0 22px; }
-
-
-/* for inner tabs */
-.tab-content { display: none; height: 100%; }
-.tab-visible { display: block; }
-.further-information .tabs-container-inner { height: 100%; margin: 0; padding: 0; }
-.tabs-navigation { border-bottom: 1px solid #515151; overflow: hidden; }
-.tabs-navigation li { float: left; width: 33%; }
-.tabs-navigation a { color: #000; display: block; padding: 10px 0; text-align: center; text-decoration: none; }
-.tabs-navigation .tab-selected { border-bottom: 1px solid #515151; }
-.tabs-content { height: 82%; overflow: auto; padding: 8px 6px 6px 12px; }
 
 
 .key-list { margin: 5px 0; overflow: hidden; }
@@ -174,8 +108,6 @@ body { height:100%; font-family: arial; }
 	.periodic-table .el { clear: both; display: block; float: none; height: auto; margin-left: auto; margin-right: auto; padding: 1px; width: 96%; }
 	/* This is a bit of a nasty quick-fix ... */
 	.periodic-table .el:last-child { margin-bottom: 0; }
-	td:nth-of-type(1).el-expanded .further-information,
-	td:nth-of-type(18).el-expanded .further-information { left: auto; right: auto; }
 	.key-list li { margin: 2px 0; width: 100%; }
 	.key-el { max-width: 30px; min-height: 30px; }
 	.periodic-table .el:hover { padding: 0; margin-top: 1px; margin-left: auto; margin-right: auto; margin-top: 1px; }
@@ -184,11 +116,4 @@ body { height:100%; font-family: arial; }
 
 	.el-expanded .atomic-number,
 	.el-expanded > .heading { display: none; }
-
-	.el-expanded .further-information { border: 0; bottom: auto; left: auto; position: relative; right: auto; text-align: left; top: auto; }
-	.tabs-container { overflow: hidden; position: relative; width: 100%; }
-	.el-container,
-	.tab-container { padding: 0 0 30px 0; position: static; width: 100%; }
-	.tabs-navigation li { text-align: center; width: 50%; }
-	.arrow { display: none; }
 }
