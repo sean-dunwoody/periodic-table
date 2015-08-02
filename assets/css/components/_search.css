@@ -1,0 +1,26 @@
+.search-enabled .el {
+	transition: all 0.2s ease;
+}
+
+.table-search {
+	background: #efefef;
+	border: 3px solid #C2BCBC;
+	color: #555;
+	min-width: 300px;
+	padding: 8px 12px;
+	position: absolute;
+	right: 0;
+	top: 9px;
+}
+.table-search:focus {
+	background: #fff;
+}
+
+.search-active .el {
+	opacity: 0.5;
+}
+.periodic-table .matched {
+    border-color: #000;
+	opacity: 1;
+	outline: 1px solid #000;
+}
