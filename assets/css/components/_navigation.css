@@ -1,13 +1,13 @@
 .navigation-container { background: #eae6e6; border-bottom: 1px solid #c2bcbc; float: left; width: 100%; }
 .navigation-container-inner { position: relative; }
-#main-nav { overflow: hidden; text-align: center; }
+#main-nav { overflow: hidden; text-align: left; }
 #main-nav li { display: inline-block; }
 #main-nav a,
 .nav-toggle { color: #525252; display: block; font: bold 16px arial; margin: 0 10px; padding: 18px 17px; text-decoration: none; }
 #main-nav a:hover,
 #main-nav .PageSelected a { color: #000; }
 #main-nav .PageSelected a { border-top: 8px solid #C2BCBC; padding-top: 10px; }
-#element-close { background: #C2BCBC; border-radius: 6px; color: #000;display: none; padding: 6px 8px; position: absolute; right: 5%; text-decoration: none; top: 0; }
+#element-close { background: #C2BCBC; border-radius: 6px; color: #000; display: none; left: 50%; padding: 6px 8px; position: absolute; text-decoration: none; top: 14px; }
 #element-close.visible { display: block; }
 
 /* responsive-nav.js 1.0.32 by @viljamis */
