@@ -12,17 +12,14 @@ module.exports = function(grunt) {
                     'assets/js/responsive-nav.js',
                     'assets/js/simple_tabs.js',
                     'assets/js/element.js',
+                    'assets/js/search.js',
                     'assets/js/default.js'
                 ],
                 dest: 'dist/assets/js/default.js'
             },
             // move the css file to the dist folder so we can run uncss on it
-            css: {
-                src: 'assets/css/screen.css',
-                dest: 'dist/assets/css/screen.css'
-            },
             cssComponents: {
-                src: ['assets/css/components/_element.css', 'assets/css/components/_navigation.css'],
+                src: ['assets/css/components/_element.css', 'assets/css/components/_navigation.css', 'assets/css/components/_search.css'],
                 dest: 'dist/assets/css/components.css'
             }
         },
@@ -37,7 +34,16 @@ module.exports = function(grunt) {
                         filter: 'isFile'
                     }
                 ]
-            }
+            },
+            css: {
+                files: [
+                    {
+                        src: 'assets/css/screen.css',
+                        dest: 'dist/assets/css/screen.min.css',
+                        filter: 'isFile'
+                    }
+                ]
+            },
         },
         uglify: {
             build: {
@@ -45,17 +51,17 @@ module.exports = function(grunt) {
                 dest: 'dist/assets/js/default.min.js'
             }
         },
-        cssmin: {
-            target: {
-                files: {
-                    'dist/assets/css/screen.min.css': ['dist/assets/css/screen.css', 'dist/assets/css/components.css']
-                }
-            }
-        },
         uncss: {
             dist: {
                 files: {
                     'dist/assets/css/screen.css': ['dist/index.html', 'dist/about.html']
+                }
+            }
+        },
+        cssmin: {
+            target: {
+                files: {
+                    'dist/assets/css/screen.min.css': ['dist/assets/css/screen.css', 'dist/assets/css/components.css']
                 }
             }
         },
@@ -97,7 +103,7 @@ module.exports = function(grunt) {
             },
             css: {
                 files: ['assets/css/**/*.css'],
-                tasks: ['concat', 'uncss', 'cssmin'],
+                tasks: ['copy', 'concat', 'uncss', 'cssmin'],
                 options: {
                     livereload: true,
                 },
@@ -122,6 +128,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['copy', 'concat', 'uncss', 'uglify', 'processhtml', 'htmlmin', 'cssmin', 'imagemin']);
+    grunt.registerTask('default', ['copy', 'concat', 'uglify', 'processhtml', 'htmlmin', 'uncss', 'cssmin', 'imagemin']);
 
 };
