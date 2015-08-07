@@ -2,6 +2,19 @@
 
 .el .atomic-number { font-size: 14px; }
 .el .heading { display: block; font: bold 18px arial; margin: 0; }
+.heading-full {
+	/* 
+		Hide the element visually, but let screen readers access it
+		http://webaim.org/techniques/css/invisiblecontent/
+	*/
+	height: 1px;
+	/* @todo: is 'left: -10000px' needed? Currently created problems with outline styles on hover */
+	/*left: -10000px;*/
+	overflow: hidden;
+	position: absolute;
+	top: auto;
+	width: 1px;
+}
 
 
 .further-information { background-color: inherit; border: 1px solid #000; bottom: 0; color: #000; cursor: auto; display: block; left: 0; opacity: 0; overflow: hidden; position: absolute; right: 0; top: 0; transition: all .25s ease; -moz-transition: all .25s ease; z-index: -1; }
