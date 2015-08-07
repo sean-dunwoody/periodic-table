@@ -32,7 +32,9 @@ body { height:100%; font-family: arial; }
 .periodic-table { clear: both; margin: 10px auto; }
 .periodic-table .heading { font-size: 20px; font-weight: bold; margin: 5px 0; }
 .periodic-table th  { font-weight: bold; }
-.periodic-table th, .periodic-table td { border: 1px solid transparent; float: left; height: 40px; margin: 1px; padding: 3px; width: 40px; }
+.periodic-table th,
+.periodic-table td { border: 1px solid transparent; float: left; height: 40px; margin: 1px; padding: 3px; width: 40px; }
+.periodic-table thead th { height: 35px; }
 .el { background: #d8d8d8; }
 .periodic-table .col2 { line-height: 40px; margin: 1px 2px; padding: 3px 12px 3px 0; width: 80px; } /* needs revising! */
 
@@ -63,7 +65,8 @@ body { height:100%; font-family: arial; }
 @media (min-width: 1200px) {
 	.centered { width: 1150px; }
 
-	.periodic-table th, .periodic-table td { height: 50px; width: 50px; }
+	.periodic-table th,
+	.periodic-table td { height: 50px; width: 50px; }
 
 	.v-align { overflow: hidden; display: table-cell; padding: 0 0 0 9px; vertical-align: middle; height: 59px; }
 }
@@ -71,7 +74,8 @@ body { height:100%; font-family: arial; }
 @media (min-width: 1400px) {
 	.centered { width: 1350px; }
 
-	.periodic-table th, .periodic-table td { height: 60px; width: 61px; }
+	.periodic-table th,
+	.periodic-table td { height: 60px; width: 61px; }
 
 	.key-list li { width: 182px; }
 	.v-align { overflow: hidden; display: table-cell; padding: 0 0 0 9px; vertical-align: middle; height: 69px; }
