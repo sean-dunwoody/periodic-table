@@ -17,11 +17,11 @@
 }
 
 
-.further-information { background-color: inherit; border: 1px solid #000; bottom: 0; color: #000; cursor: auto; display: block; left: 0; opacity: 0; overflow: hidden; position: absolute; right: 0; top: 0; transition: all .25s ease; -moz-transition: all .25s ease; z-index: -1; }
+.further-information { background-color: inherit; border: 1px solid #000; bottom: 0; color: #000; cursor: auto; display: block; left: 0; opacity: 0; overflow: hidden; position: absolute; right: 0; top: 0; transition: all .25s ease; z-index: -1; }
 .el-expanded .further-information { bottom: -110px; left: -110px; opacity: 1; right: -110px; top: -110px; z-index: 3; }
 .el-focus .further-information { z-index: 200 !important; }
 
-.tabs-container { bottom: 0; position: absolute; top: 0; transition: all .25s ease; -moz-transition: all .25s ease; width: 200%; }
+.tabs-container { bottom: 0; position: absolute; top: 0; transition: all .25s ease; width: 200%; }
 .tab-container { float: left; height: 100%; position: relative; width: 50%; }
 .arrow { background: url('/assets/img/arrows.png') no-repeat 0 0; color: transparent; cursor: pointer; height: 28px; position: absolute; right: 0; top: 0; width: 30px; }
 .next {  }
