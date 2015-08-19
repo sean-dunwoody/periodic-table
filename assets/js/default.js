@@ -73,6 +73,7 @@ var l = elementsKey.length;
 var i = 0;
 for(i; i<l; i++) {
 	elementsKey[i].addEventListener('mouseover', function(event) {
+		document.body.classList.add("filtering-active");
 		var highlightedElements = document.getElementsByClassName(this.id);
 		var le = highlightedElements.length;
 		var ie = 0;
@@ -82,6 +83,7 @@ for(i; i<l; i++) {
 	}, false);
 
 	elementsKey[i].addEventListener('mouseout', function(event) {
+		document.body.classList.remove("filtering-active");
 		var highlightedElements = document.getElementsByClassName(this.id);
 		var le = highlightedElements.length;
 		var ie = 0;

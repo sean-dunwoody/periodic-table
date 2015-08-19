@@ -14,7 +14,7 @@ searchInput.classList.add("table-search");
 document.body.classList.add("search-enabled")
 searchInput.addEventListener("input", function(event) {
 	if(searchInput.value.length > 0) {
-		document.body.classList.add("search-active");
+		document.body.classList.add("filtering-active");
 		
 		for(var i = 0; i < (elementNumber - 1); i++) {
 			var symbol  = elements[i].getElementsByClassName("heading");
@@ -33,16 +33,26 @@ searchInput.addEventListener("input", function(event) {
 			}
 
 			if(matched === true) {
-				elements[i].classList.add("matched");
+				elements[i].classList.add("el-highlighted");
 			} else {
-				elements[i].classList.remove("matched");
+				elements[i].classList.remove("el-highlighted");
 			}
 		}
 	} else {
-		document.body.classList.remove("search-active");
+		document.body.classList.remove("filtering-active");
 		for(var i = 0; i < (headingNumber - 1); i++) {
-			elementHeadings[i].parentNode.classList.remove("matched");
+			elementHeadings[i].parentNode.classList.remove("el-highlighted");
 		}
 	}
-})
+});
+searchInput.addEventListener("keydown", function(event) {
+	// if the enter key is pressed, and only one element is filtered out, open said element
+	if(event.keyCode === 13) {
+		var highlightedElements = document.getElementsByClassName("el-highlighted");
+		if(highlightedElements.length === 1) {
+			highlightedElements[0].click();
+			highlightedElements[0].focus();
+		}
+	}
+});
 navigationContainer.appendChild(searchInput);

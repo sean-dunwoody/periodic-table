@@ -68,9 +68,9 @@ function element(elementId) {
 	    	propertiesText += '<p><strong>' + this.jsonElement.PhysicalProperties[i].Property[0] + '</strong> ' + this.jsonElement.PhysicalProperties[i].Property[1] + ' <abbr title="'+ this.jsonElement.PhysicalProperties[i].PropertyType[0] +'">' + this.jsonElement.PhysicalProperties[i].PropertyType[1] + '</abbr></p>';
 	    }
 	    this.furtherInformation.innerHTML =  '<div class="tabs-container" id="'+ this.jsonElement.AtomicNumber +'">'
-	    		+' <div class="tab-container">'
-	    		+' 	<span class="arrow next" id="nextTab-'+ this.jsonElement.AtomicNumber +'">next</span>'
+	    		+' <div class="tab-container tab-container-brief">'
 	   			+' 	<span class="heading">'+ this.jsonElement.ElementName +'</span>'
+	    		+' 	<span class="arrow next" id="nextTab-'+ this.jsonElement.AtomicNumber +'">More Info</span>'
 	   			+' 	<div class="content">'
 	   			+'		<div class="information">'
 	   			+'			<p>'
@@ -96,10 +96,10 @@ function element(elementId) {
 				+			propertiesText
 				+' 		</div>'
 	   			+'	</div>'
-				+'  <a href="'+ this.jsonElement.MoreInfoLink +'" class="explore-link" target="_blank">More Information</a>'
+				+'  <a href="'+ this.jsonElement.MoreInfoLink +'" class="explore-link" target="_blank">Wikipedia Article</a>'
 				+'	</div>'
-			+' 	<div class="tab-container">'
-			+' 		<span class="arrow prev" id="prevTab-'+ this.jsonElement.AtomicNumber +'">previous</span>'
+			+' 	<div class="tab-container tab-container-further">'
+			+' 		<span class="arrow prev" id="prevTab-'+ this.jsonElement.AtomicNumber +'">Less Info</span>'
 			+'		<div class="tabs-container-inner content" id="tabs-container-inner-'+ this.jsonElement.AtomicNumber +'">'
 			+'			<ul class="tabs-navigation">'
 			+'				<li><a href="#'+ this.jsonElement.AtomicNumber +'-tab-1" class="tab-link tab-1">Description</a></li>'
@@ -133,8 +133,7 @@ function element(elementId) {
 		document.getElementById('nextTab-'+ this.jsonElement.AtomicNumber).addEventListener('click', function(event) {
 			event.stopPropagation();
 			_self.bindExtraTab();
-			_self.tabContainer.classList.add("tab-expanded");
-			_self.tabContainer.setAttribute("style", "margin-left: -100%");
+			_self.container.classList.add("tab-expanded");
 		}, false);
 		// If the viewer is on a mobile device, there won't be a click event, so bind the extra info on load
 		if(screen.width > 400) {
@@ -142,8 +141,7 @@ function element(elementId) {
 		}
 		document.getElementById('prevTab-'+ this.jsonElement.AtomicNumber).addEventListener('click', function(event) {
 			event.stopPropagation();
-			_self.tabContainer.classList.remove("tab-expanded");
-			_self.tabContainer.setAttribute("style", "margin-left: 0");
+			_self.container.classList.remove("tab-expanded");
 		}, false);
 	}
 	

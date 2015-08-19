@@ -1,4 +1,21 @@
-.periodic-table .el { border: 1px solid #999; cursor: pointer; float: left; height: 40px; margin: 1px; padding: 3px; position: relative; width: 40px; }
+.periodic-table .el {
+	border: 1px solid #999;
+	cursor: pointer;
+	float: left;
+	height: 46px;
+	margin: 1px;
+	padding: 3px;
+	position: relative;
+	transition: opacity 0.2s ease, border 0.2s ease, outline 0.2s ease;
+	width: 46px;
+}
+.filtering-active .el {
+	opacity: 0.4;
+}
+.periodic-table .el-highlighted {
+	opacity: 1;
+	/*outline: 1px solid #000;*/
+}
 
 .el .atomic-number { font-size: 14px; }
 .el .heading { display: block; font: bold 18px arial; margin: 0; }
@@ -19,15 +36,41 @@
 
 .further-information { background-color: inherit; border: 1px solid #000; bottom: 0; color: #000; cursor: auto; display: block; left: 0; opacity: 0; overflow: hidden; position: absolute; right: 0; top: 0; transition: all .25s ease; z-index: -1; }
 .el-expanded .further-information { bottom: -110px; left: -110px; opacity: 1; right: -110px; top: -110px; z-index: 3; }
+.el-expanded.tab-expanded .tabs-container { width: 100%; }
+.el-expanded.tab-expanded .further-information { left: -300px; right: -300px; }
+.el-expanded.tab-expanded .next { display: none; }
+.tab-expanded .tab-container-brief { width: 40%; }
+.tab-expanded .tab-container-further { width: 60%; }
 .el-focus .further-information { z-index: 200 !important; }
 
 .tabs-container { bottom: 0; position: absolute; top: 0; transition: all .25s ease; width: 200%; }
 .tab-container { float: left; height: 100%; position: relative; width: 50%; }
-.arrow { background: url('/assets/img/arrows.png') no-repeat 0 0; color: transparent; cursor: pointer; height: 28px; position: absolute; right: 0; top: 0; width: 30px; }
+.arrow {
+	background: rgba(255, 255, 255, 0.4);
+	cursor: pointer;
+	display: block;
+	/*height: 41px;*/
+	padding: 12px 12px 13px 12px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+/*.arrow:before {
+	border: 12px solid transparent;
+	border-width: 8px 0px 8px 14px;
+	border-left-color: #444;
+	content: "";
+	right: 10px;
+	position: absolute;
+	top: 12px;
+}
 .next {  }
-.prev { background-position: 0 -28px; }
+.prev:before {
+	border-left-color: transparent;
+	border-right-color: #444;
+}*/
 
-.further-information .heading { border-bottom: 1px solid #515151; margin: 6px 3px 0 12px; padding: 0 0 6px 0 }
+.further-information .heading { border-bottom: 1px solid #515151; padding: 0 38px 6px 12px; }
 .further-information .content { font-size: 13px; line-height: 16px; overflow: hidden; padding: 3px 3px 6px 12px; }
 .further-information .content p { clear: both; float: left; margin: 4px 0; }
 .explore-link { 
@@ -48,14 +91,14 @@
 
 
 /* for inner tabs */
-.tab-content { display: none; height: 100%; }
+.tab-content { display: none; height: 100%; overflow: auto; padding: 6px 20px 9px 18px; }
 .tab-visible { display: block; }
 .further-information .tabs-container-inner { height: 100%; margin: 0; padding: 0; }
 .tabs-navigation { border-bottom: 1px solid #515151; overflow: hidden; }
-.tabs-navigation li { float: left; width: 33%; }
-.tabs-navigation a { color: #000; display: block; padding: 10px 0; text-align: center; text-decoration: none; }
+.tabs-navigation li { float: left; }
+.tabs-navigation a { color: #000; display: block; font-size: 15px; padding: 12px 18px 12px 18px; text-align: center; text-decoration: none; }
 .tabs-navigation .tab-selected { border-bottom: 1px solid #515151; }
-.tabs-content { height: 82%; overflow: auto; padding: 8px 6px 6px 12px; }
+.tabs-content { height: 85%; }
 
 /* Mobile Styles */
 @media (max-width: 1600px) {
@@ -74,10 +117,10 @@
 		display: block;
 		height: 100%;
 		margin: 3px;
-		max-height: 60px;
-		max-width: 60px;
+		max-height: 84px;
+		max-width: 84px;
 		padding: 12px;
-		transition: all 0.5s ease;
+		transition: opacity 0.5s ease, border 0.5s ease, outline 0.5s ease;
 		width: 100%;
 	}
 	.el .atomic-number { font-size: 22px; }
@@ -87,8 +130,8 @@
 		different search styles on mobile 
 		(hide element that aren't matched)
 	*/
-	.search-active .el { display: none; }
-	.periodic-table .matched { display: block; }
+	.filtering-active .el { display: none; }
+	.periodic-table .el-highlighted { display: block; }
 
 	/* This is a bit of a nasty quick-fix ... */
 	.periodic-table .el:last-child { margin-bottom: 0; }
@@ -120,13 +163,14 @@
 }
 @media (min-width: 1200px) {
 	.periodic-table .heading { font-size: 21px; }
-	.periodic-table .el { border: 1px solid #999; cursor: pointer; float: left; height: 50px; margin: 1px; padding: 3px; position: relative; width: 50px; }
+	.periodic-table .el { border: 1px solid #999; cursor: pointer; float: left; height: 58px; margin: 1px; padding: 3px; position: relative; width: 58px; }
+	.periodic-table .el-highlighted { border-color: #000; }
 	.periodic-table .el:hover,
-	.periodic-table .el-highlighted { border-color: #000; outline: 1px solid #000; }
+	.periodic-table .el-expanded { border-color: #000; outline: 1px solid #000; z-index: 2; }
 }
 /* Responsive stuff */
 @media (min-width: 1400px) {
 	.periodic-table .heading { font-size: 25px; margin-top: 5px; }
-	.periodic-table .el { border: 1px solid #999; cursor: pointer; float: left; height: 60px; margin: 1px; padding: 4px; position: relative; width: 59px; }
+	.periodic-table .el { height: 68px; padding: 4px; width: 69px; }
 	.el .atomic-number { font-size: 17px; }
 }
