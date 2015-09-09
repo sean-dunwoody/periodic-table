@@ -1,103 +1,317 @@
-/* CSS reset */
+/*------------------------------------*\
+    #CSS Reset
+\*------------------------------------*/
+
 html, body, div, span, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, address, cite, code,
 img, ol, ul, li, fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	margin: 0;
-	padding: 0;
-	vertical-align: baseline;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
 }
-body { line-height: 1; }
-ol, ul { list-style: none; }
-table { border-collapse: collapse; border-spacing: 0; }
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 *, *:before, *:after {
-	box-sizing: inherit;
+    box-sizing: inherit;
 }
-/* CSS reset ends */
-
-html { height: 100%; overflow-y: scroll; }
-body { height: 100%; font-family: arial; }
-
-#container { min-height: 100%; position: relative; }
-   
-#wrapper { padding: 10px 0 90px 0; }
-.v-align { display: inline-block; vertical-align: middle; }
-.centered { clear: both; margin: 0 auto; width: 980px; }
-
-.page-content { line-height: 1.4; padding: 1% 9%; }
-.page-content p { margin: 20px 0; }
 
 
-.periodic-table { clear: both; margin: 10px auto; }
-.periodic-table .heading { font-size: 20px; font-weight: bold; margin: 5px 0; }
-.periodic-table th  { font-weight: bold; }
-.periodic-table th,
-.periodic-table td { border: 1px solid transparent; float: left; height: 46px; margin: 1px; padding: 3px; width: 46px; }
-.periodic-table thead th { height: 41px; }
-.el { background: #d8d8d8; }
-.periodic-table .col2 { line-height: 40px; margin: 1px 2px; padding: 3px 12px 3px 0; width: 80px; } /* needs revising! */
-
-.non-metal { background: #68e841; }
-.noble-gas { background: #b8c1de; }
-.halogen { background: #e7e5b0; }
-.alkali-metal { background: #e79292; }
-.transition-metal { background: #E7C4C4; }
-.metalloid { background: #79a969; }
-.alkali-earth-metal { background: #ffec4c; }
-.post-transition-metal { background: #90cba3; }
-.lathanide { background: #ebb0ef; }
-.actinide { background: #d680db; }
 
 
-.key-list { margin: 5px 0; overflow: hidden; }
-.key-list li { float: left; padding: 2px 5px; width: 200px; }
-.key-list .el { float: none; }
 
-.footer { background: #eae6e6; border-top: 1px solid #c2bcbc; bottom: 0; color: #666; float: left; height: 56px; padding: 20px 0; position: absolute; text-align: center; width: 100%; }
-.footer a { color: #000; text-decoration: none; }
+/*------------------------------------*\
+    #Global
+\*------------------------------------*/
 
-/* Responsive stuff */
+html {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+body {
+    height: 100%;
+    font-family: arial;
+}
+
+.v-align {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.centered {
+    clear: both;
+    margin: 0 auto;
+    width: 980px;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Global Layout
+\*------------------------------------*/
+
+#container {
+    min-height: 100%;
+    position: relative;
+}
+
+#wrapper {
+    padding: 10px 0 90px 0;
+}
+
+
+.page-content {
+    line-height: 1.4;
+    padding: 1% 9%;
+}
+
+.page-content p {
+    margin: 20px 0;
+}
+
+
+.footer {
+    background: #eae6e6;
+    border-top: 1px solid #c2bcbc;
+    bottom: 0;
+    color: #666;
+    float: left;
+    height: 56px;
+    padding: 20px 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.footer a {
+    color: #000;
+    text-decoration: none;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Periodic Table
+\*------------------------------------*/
+
+.periodic-table {
+    clear: both;
+    margin: 10px auto;
+}
+
+    .periodic-table .heading {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 5px 0;
+    }
+
+    .periodic-table th {
+        font-weight: bold;
+    }
+
+    .periodic-table th,
+    .periodic-table td {
+        border: 1px solid transparent;
+        float: left;
+        height: 46px;
+        margin: 1px;
+        padding: 3px;
+        width: 46px;
+    }
+
+    .periodic-table thead th {
+        height: 41px;
+    }
+
+    .periodic-table .col2 {
+        line-height: 40px;
+        margin: 1px 2px;
+        padding: 3px 12px 3px 0;
+        width: 80px;
+    }
+
+
+.el {
+    background: #d8d8d8;
+}
+
+    .key-list .el {
+        float: none;
+    }
+
+    .non-metal {
+        background: #68e841;
+    }
+
+    .noble-gas {
+        background: #b8c1de;
+    }
+
+    .halogen {
+        background: #e7e5b0;
+    }
+
+    .alkali-metal {
+        background: #e79292;
+    }
+
+    .transition-metal {
+        background: #e7c4c4;
+    }
+
+    .metalloid {
+        background: #79a969;
+    }
+
+    .alkali-earth-metal {
+        background: #ffec4c;
+    }
+
+    .post-transition-metal {
+        background: #90cba3;
+    }
+
+    .lathanide {
+        background: #ebb0ef;
+    }
+
+    .actinide {
+        background: #d680db;
+    }
+
+
+.key-list {
+    margin: 5px 0;
+    overflow: hidden;
+}
+
+.key-list li {
+    float: left;
+    padding: 2px 5px;
+    width: 200px;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Responsive
+\*------------------------------------*/
 @media (min-width: 1200px) {
-	.centered { width: 1150px; }
+    .centered {
+        width: 1150px;
+    }
 
-	.periodic-table th,
-	.periodic-table td { height: 58px; width: 58px; }
+    .v-align {
+        overflow: hidden;
+        display: table-cell;
+        padding: 0 0 0 9px;
+        vertical-align: middle;
+        height: 59px;
+    }
 
-	.v-align { overflow: hidden; display: table-cell; padding: 0 0 0 9px; vertical-align: middle; height: 59px; }
+
+    .periodic-table th,
+    .periodic-table td {
+        height: 58px;
+        width: 58px;
+    }
 }
-/* Responsive stuff */
+
+
 @media (min-width: 1400px) {
-	.centered { width: 1350px; }
+    .centered {
+        width: 1350px;
+    }
 
-	.periodic-table th,
-	.periodic-table td { height: 68px; width: 69px; }
+    .v-align {
+        height: 69px;
+    }
 
-	.key-list li { width: 182px; }
-	.v-align { overflow: hidden; display: table-cell; padding: 0 0 0 9px; vertical-align: middle; height: 69px; }
+
+    .periodic-table th,
+    .periodic-table td {
+        height: 68px;
+        width: 69px;
+    }
+
+    .key-list li {
+        width: 182px;
+    }
 }
-/* Mobile Styles */
+
+
 @media (max-width: 800px) {
-	.navigation-container { left: 0; position: fixed; right: 0; top: 0; z-index: 1000; }
-	#main-nav { margin: 6px 0; }
-	#main-nav li { display: block; }
-	#main-nav .PageSelected a { background-image: none; }
-	#element-close { top: 14px; }
+    .navigation-container {
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 1000;
+    }
 
-	#wrapper { padding-top: 54px; }
+        #main-nav {
+            margin: 6px 0;
+        }
 
-	.centered,
-	.periodic-table { width: 100%; }
-	.periodic-table th,
-	.periodic-table td { display: none; }
-	.key-list li { padding: 2px 0; width: 100%; }
-	/*.key-el { max-width: 30px; min-height: 30px; }*/
+            #main-nav li {
+                display: block;
+            }
+
+            #main-nav .PageSelected a {
+                background-image: none;
+            }
+
+
+        #element-close {
+            top: 14px;
+        }
+
+
+    #wrapper {
+        padding-top: 54px;
+    }
+
+
+    .centered,
+    .periodic-table {
+        width: 100%;
+    }
+
+    .periodic-table th,
+    .periodic-table td {
+        display: none;
+    }
+
+    .key-list li {
+        padding: 2px 0;
+        width: 100%;
+    }
 }

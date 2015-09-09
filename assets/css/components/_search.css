@@ -1,13 +1,18 @@
+/*------------------------------------*\
+    #Search
+\*------------------------------------*/
+
 .table-search {
-	background: #efefef;
-	border: 3px solid #C2BCBC;
-	color: #555;
-	min-width: 300px;
-	padding: 8px 12px;
-	position: absolute;
-	right: 0;
-	top: 9px;
+    background: #efefef;
+    border: 3px solid #c2bcbc;
+    color: #555;
+    min-width: 300px;
+    padding: 8px 12px;
+    position: absolute;
+    right: 0;
+    top: 9px;
 }
+
 .table-search:focus {
-	background: #fff;
+    background: #fff;
 }
