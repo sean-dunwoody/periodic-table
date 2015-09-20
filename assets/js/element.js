@@ -5,6 +5,7 @@ function element(elementId) {
 
 	this.id = elementId;
 	this.container = document.getElementById(this.id);
+	this.extraInfoVisible;
 
 	// canvas functions
 	this.isOdd = function(someNumber){
@@ -39,6 +40,9 @@ function element(elementId) {
 	}
 	this.close = function() {
 		this.container.classList.remove("el-expanded", "el-focus");
+		if(_self.extraInfoVisible) {
+			_self.hideExtraInfo();
+		}
 	}
 
 	this.bindExtraTab = function() {
@@ -49,21 +53,21 @@ function element(elementId) {
 	this.showExtraInfo = function() {
 		// calculate available to space for element to expand into
 		//var screenSize = window.innerWidth;
-		var elWidth = this.furtherInformation.offsetWidth;
+		var elWidth = _self.furtherInformation.offsetWidth;
 		// available space to the left of the element
-		var offsetLeft = findPos(this.furtherInformation).x;
+		var offsetLeft = findPos(_self.furtherInformation).x;
 
-		var leftValue = parseInt(window.getComputedStyle(this.furtherInformation, null).getPropertyValue("left"));
+		var leftValue = parseInt(window.getComputedStyle(_self.furtherInformation, null).getPropertyValue("left"));
 		//var rightValue = window.getComputedStyle(this.furtherInformation, null).getPropertyValue("right");
 
 		var unExpandedWidth = elWidth + (leftValue * 2);
-		console.log('unexpanded width: ' + unExpandedWidth);
+		//console.log('unexpanded width: ' + unExpandedWidth);
 		var finalWidth = elWidth * 2.5;
 		var newOffset = (finalWidth - unExpandedWidth) / 2;
 
-		console.log('offset left: ' + offsetLeft);
-		console.log('left value: ' + leftValue);
-		console.log('new offset: ' + newOffset);
+		//console.log('offset left: ' + offsetLeft);
+		//console.log('left value: ' + leftValue);
+		//console.log('new offset: ' + newOffset);
 
 		if(offsetLeft > newOffset) {
 			_self.container.classList.add("tab-expanded");
@@ -71,27 +75,37 @@ function element(elementId) {
 			_self.furtherInformation.style.right = '-' + newOffset + 'px';
 		} else {
 			var overhang = newOffset - offsetLeft + 20;
-			console.log("overhang: " + overhang);
+			//console.log("overhang: " + overhang);
 			var shiftLeft = newOffset - overhang - leftValue;
-			console.log('shift left: ' + shiftLeft);
+			//console.log('shift left: ' + shiftLeft);
 			var shiftRight = newOffset + overhang + leftValue;//newOffset - (overhang);
-			console.log('shift right: ' + shiftRight);
+			//console.log('shift right: ' + shiftRight);
 
-			this.furtherInformation.style.left = -shiftLeft + "px";
-			this.furtherInformation.style.right = -shiftRight + "px";
+			_self.furtherInformation.style.left = -shiftLeft + "px";
+			_self.furtherInformation.style.right = -shiftRight + "px";
 
 			_self.container.classList.add("tab-expanded", "tab-expanded-constraint");
-
 		}
+
+		//console.log("set 'extraInfoVisible' to true");
+		this.extraInfoVisible = true;
+		//console.log(_self.extraInfoVisible);
 	}
 
 	this.hideExtraInfo = function() {
-		console.log(this.furtherInformation.clientWidth);
-		this.furtherInformation.style.left = null;
-		this.furtherInformation.style.right = null;
+		//console.log(_self.furtherInformation.clientWidth);
+		_self.furtherInformation.style.left = null;
+		_self.furtherInformation.style.right = null;
 		_self.container.classList.remove("tab-expanded", "tab-expanded-constraint");
+
+		//console.log("set 'extraInfoVisible' to false");
+		_self.extraInfoVisible = false;
 	}
 
+	this.expand = function() {
+		// For CSS styling purposes (expands the element)
+		this.container.classList.add("el-expanded");
+	}
 
 	// this is one hell of a constructor...
 	if(!this.container.classList.contains('el-loaded')) {
@@ -104,62 +118,62 @@ function element(elementId) {
 		// Populate the HTML with information gleaned from the JSON data
 
 		// Create the container for the data
-	    this.furtherInformation = document.createElement("div"); //this.container.getElementsByClassName('further-information').item(0);
-	    this.furtherInformation.className = "further-information";
-	    this.container.appendChild(this.furtherInformation);
+		this.furtherInformation = document.createElement("div"); //this.container.getElementsByClassName('further-information').item(0);
+		this.furtherInformation.className = "further-information";
+		this.container.appendChild(this.furtherInformation);
 
-	    var propertiesText = '';
-	    var propertiesLength = this.jsonElement.PhysicalProperties.length;
-	    for(var i = 0; i < propertiesLength; i++) {
-	    	propertiesText += '<p><strong>' + this.jsonElement.PhysicalProperties[i].Property[0] + '</strong> ' + this.jsonElement.PhysicalProperties[i].Property[1] + ' <abbr title="'+ this.jsonElement.PhysicalProperties[i].PropertyType[0] +'">' + this.jsonElement.PhysicalProperties[i].PropertyType[1] + '</abbr></p>';
-	    }
-	    this.furtherInformation.innerHTML =  '<div class="tabs-container" id="'+ this.jsonElement.AtomicNumber +'">'
-	    		+' <div class="tab-container tab-container-brief">'
-	   			+' 	<span class="heading">'+ this.jsonElement.ElementName +'</span>'
-	    		+' 	<span class="arrow next" id="nextTab-'+ this.jsonElement.AtomicNumber +'">More Info</span>'
-	   			+' 	<div class="content">'
-	   			+'		<div class="information">'
-	   			+'			<p>'
-	   			+'				<strong>Atomic number:</strong>'
-	   			+'				'+ this.jsonElement.AtomicNumber
-				+'			</p>'
-				+'			<p>'
-				+'				<strong>Atomic Weight</strong>'
-	   			+'				'+ this.jsonElement.AtomicWeight
-				+'			</p>'
-				+'			<p>'
-				+'				<strong>Protons</strong>'
-	   			+'				'+ this.jsonElement.AtomicNumber
-				+'			</p>'
-				+'			<p>'
-				+'				<strong>Neutrons</strong>'
-	   			+'				'+ (Math.round(this.jsonElement.AtomicWeight) - this.jsonElement.AtomicNumber)
-				+'			</p>'
-				+'			<p>'
-				+'				<strong>Electrons</strong>'
-	   			+'				'+ this.jsonElement.AtomicNumber
-				+'			</p>'
-				+			propertiesText
-				+' 		</div>'
-	   			+'	</div>'
-				+'  <a href="'+ this.jsonElement.MoreInfoLink +'" class="explore-link" target="_blank">Wikipedia Article</a>'
-				+'	</div>'
+		var propertiesText = '';
+		var propertiesLength = this.jsonElement.PhysicalProperties.length;
+		for(var i = 0; i < propertiesLength; i++) {
+			propertiesText += '<p><strong>' + this.jsonElement.PhysicalProperties[i].Property[0] + '</strong> ' + this.jsonElement.PhysicalProperties[i].Property[1] + ' <abbr title="'+ this.jsonElement.PhysicalProperties[i].PropertyType[0] +'">' + this.jsonElement.PhysicalProperties[i].PropertyType[1] + '</abbr></p>';
+		}
+		this.furtherInformation.innerHTML =  '<div class="tabs-container" id="'+ this.jsonElement.AtomicNumber +'">'
+			+' <div class="tab-container tab-container-brief">'
+			+' 	<span class="heading">'+ this.jsonElement.ElementName +'</span>'
+			+' 	<span class="arrow next" id="nextTab-'+ this.jsonElement.AtomicNumber +'">More Info</span>'
+			+' 	<div class="content">'
+			+'		<div class="information">'
+			+'			<p>'
+			+'				<strong>Atomic number:</strong>'
+			+'				'+ this.jsonElement.AtomicNumber
+			+'			</p>'
+			+'			<p>'
+			+'				<strong>Atomic Weight</strong>'
+			+'				'+ this.jsonElement.AtomicWeight
+			+'			</p>'
+			+'			<p>'
+			+'				<strong>Protons</strong>'
+			+'				'+ this.jsonElement.AtomicNumber
+			+'			</p>'
+			+'			<p>'
+			+'				<strong>Neutrons</strong>'
+			+'				'+ (Math.round(this.jsonElement.AtomicWeight) - this.jsonElement.AtomicNumber)
+			+'			</p>'
+			+'			<p>'
+			+'				<strong>Electrons</strong>'
+			+'				'+ this.jsonElement.AtomicNumber
+			+'			</p>'
+			+			propertiesText
+			+' 		</div>'
+			+'	</div>'
+			+'  <a href="'+ this.jsonElement.MoreInfoLink +'" class="explore-link" target="_blank">Wikipedia Article</a>'
+			+'	</div>'
 			+' 	<div class="tab-container tab-container-further">'
 			+' 		<span class="arrow prev" id="prevTab-'+ this.jsonElement.AtomicNumber +'">Less Info</span>'
 			+'		<div class="tabs-container-inner content" id="tabs-container-inner-'+ this.jsonElement.AtomicNumber +'">'
 			+'			<ul class="tabs-navigation">'
 			+'				<li><a href="#'+ this.jsonElement.AtomicNumber +'-tab-1" class="tab-link tab-1">Description</a></li>'
 			+'				<li><a href="#'+ this.jsonElement.AtomicNumber +'-tab-2" class="tab-link tab-2">Visualise</a></li>'
-			//+'				<li><a href="#'+ this.jsonElement.AtomicNumber +'-tab-3" class="tab-link tab-3">Tab Three</a></li>'
+				//+'				<li><a href="#'+ this.jsonElement.AtomicNumber +'-tab-3" class="tab-link tab-3">Tab Three</a></li>'
 			+'			</ul>'
 			+'			<ul class="tabs-content">'
 			+'				<li class="tab-content tab-1 tab-visible" id="'+ this.jsonElement.AtomicNumber +'-tab-1">' + this.jsonElement.BriefDescription + '</li>'
 			+'				<li class="tab-content tab-2 tab-visible" id="'+ this.jsonElement.AtomicNumber +'-tab-2"><canvas id="visualise-'+ this.jsonElement.AtomicNumber +'" width="250" height="190"></canvas><p>Red = Proton | Blue = Neutron</li>'
-			//+'				<li class="tab-content tab-3 tab-visible" id="'+ this.jsonElement.AtomicNumber +'-tab-3">Tab three content</li>'
+				//+'				<li class="tab-content tab-3 tab-visible" id="'+ this.jsonElement.AtomicNumber +'-tab-3">Tab three content</li>'
 			+'			</ul>'
 			+'		</div>'
 			+'	</div>'
-		+'	</div>';
+			+'	</div>';
 
 		// Create canvas
 		this.canvas = document.getElementById("visualise-" + this.jsonElement.AtomicNumber);
@@ -190,8 +204,4 @@ function element(elementId) {
 			_self.hideExtraInfo();
 		}, false);
 	}
-	
-	// For CSS styling purposes (expands the element)
-	this.container.classList.add("el-expanded");
-
 }

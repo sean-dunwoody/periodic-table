@@ -10,6 +10,7 @@ var closeAll = document.getElementById('element-close');
 // loop the elements and add appropriate event listeners
 var l = elements.length;
 var i = 0;
+var instantiatedElements = [];
 var openedElements = [];
 var focusedElements;
 for(i; i<l; i++) {
@@ -17,32 +18,35 @@ for(i; i<l; i++) {
 		event.stopPropagation();
 		var elementId = this.id;		 // this is the ID of the HTML element
 		var htmlElementId = this.id - 1; // as the array is zero indexed, to refer to the array item we need to -1 from the HTML ID (it's dirty but I'm not sure there's a better way)
-		console.log(htmlElementId);
 		// Instantiate a new element if one has not already been instantiated
 		if(!elements[htmlElementId].classList.contains('el-expanded')) {
-			openedElements.push(new element(elementId));
-			console.log(this.id);
+			// only instantiate an element if it hasn't already been instantiated
+			if(!instantiatedElements[htmlElementId]) {
+				var newElement = new element(elementId);
+				instantiatedElements[htmlElementId] = newElement;
+			}
+			openedElements.push(htmlElementId);
+			instantiatedElements[htmlElementId].expand();
 			this.classList.add('el-focus', 'el-loaded'); // add a class we can use to detect if an ajax request has been made in the past
-			console.log(this.classList);
 		}
 		// focus the current element
 		focusedElements = document.getElementsByClassName('el-focus');
 		while (focusedElements.length) {
 			focusedElements[0].classList.remove('el-focus');
 		}
-		console.log(elements[htmlElementId]);
 		this.classList.add('el-focus');
 		closeAll.classList.add('visible');
 	}, false);
 }
-console.log(openedElements);
 
 // Code for closing all elements at once
 closeAll.addEventListener('click', function(event) {
 	event.preventDefault();
 	var numElements = openedElements.length;
+	console.log("num elements: " + openedElements.length);
 	for(var i = numElements - 1; i >= 0; i--) {
-		openedElements[i].close();
+		var elementReference = openedElements[i];
+		instantiatedElements[elementReference].close();
 		// this seems ineffecient, but apparently it's (probably) the best way in our circumstances
 		// see http://stackoverflow.com/questions/1232040/how-to-empty-an-array-in-javascript for more
 		openedElements.pop();
@@ -53,7 +57,9 @@ closeAll.addEventListener('click', function(event) {
 document.body.addEventListener('click', function(event) {
 	try {
 		// hide the element
-		var lastOpened = openedElements[openedElements.length-1];
+		console.log("num elements: " + openedElements.length);
+		var lastOpenedReference = openedElements[openedElements.length-1];
+		var lastOpened = instantiatedElements[lastOpenedReference]
 		lastOpened.close();
 		// remove the element from the opened array
 		openedElements.pop();
