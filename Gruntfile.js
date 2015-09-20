@@ -11,6 +11,7 @@ module.exports = function(grunt) {
                     'assets/js/ajax.js',
                     'assets/js/responsive-nav.js',
                     'assets/js/simple_tabs.js',
+                    'assets/js/offset.js',
                     'assets/js/element.js',
                     'assets/js/search.js',
                     'assets/js/default.js'
@@ -43,7 +44,7 @@ module.exports = function(grunt) {
                         filter: 'isFile'
                     }
                 ]
-            },
+            }
         },
         uglify: {
             build: {
@@ -80,7 +81,7 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     'dist/index.html': ['index.html'],
-                    'dist/about.html': ['about.html'],
+                    'dist/about.html': ['about.html']
                 }
             }
         },
@@ -103,10 +104,10 @@ module.exports = function(grunt) {
             },
             css: {
                 files: ['assets/css/**/*.css'],
-                tasks: ['copy', 'concat', 'uncss', 'cssmin'],
-                options: {
-                    livereload: true,
-                },
+                tasks: ['copy', 'concat', 'uncss', 'cssmin']
+                //options: {
+                //    livereload: true,
+                //},
             },
             js: {
                 files: ['assets/js/*.js'],

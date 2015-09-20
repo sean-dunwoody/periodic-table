@@ -8,7 +8,7 @@ function element(elementId) {
 
 	// canvas functions
 	this.isOdd = function(someNumber){
-		return (someNumber%2 == 1) ? true : false;
+		return (someNumber%2 == 1);
 	};
 	this.draw = function(aNumber, aWeight) {
 		var protons  = aNumber;
@@ -44,6 +44,52 @@ function element(elementId) {
 	this.bindExtraTab = function() {
 		var tabId = 'tabs-container-inner-' + this.jsonElement.AtomicNumber;
 		this.extraTabs = new simpleTabs(tabId)
+	}
+
+	this.showExtraInfo = function() {
+		// calculate available to space for element to expand into
+		//var screenSize = window.innerWidth;
+		var elWidth = this.furtherInformation.offsetWidth;
+		// available space to the left of the element
+		var offsetLeft = findPos(this.furtherInformation).x;
+
+		var leftValue = parseInt(window.getComputedStyle(this.furtherInformation, null).getPropertyValue("left"));
+		//var rightValue = window.getComputedStyle(this.furtherInformation, null).getPropertyValue("right");
+
+		var unExpandedWidth = elWidth + (leftValue * 2);
+		console.log('unexpanded width: ' + unExpandedWidth);
+		var finalWidth = elWidth * 2.5;
+		var newOffset = (finalWidth - unExpandedWidth) / 2;
+
+		console.log('offset left: ' + offsetLeft);
+		console.log('left value: ' + leftValue);
+		console.log('new offset: ' + newOffset);
+
+		if(offsetLeft > newOffset) {
+			_self.container.classList.add("tab-expanded");
+			_self.furtherInformation.style.left = '-' + newOffset + 'px';
+			_self.furtherInformation.style.right = '-' + newOffset + 'px';
+		} else {
+			var overhang = newOffset - offsetLeft + 20;
+			console.log("overhang: " + overhang);
+			var shiftLeft = newOffset - overhang - leftValue;
+			console.log('shift left: ' + shiftLeft);
+			var shiftRight = newOffset + overhang + leftValue;//newOffset - (overhang);
+			console.log('shift right: ' + shiftRight);
+
+			this.furtherInformation.style.left = -shiftLeft + "px";
+			this.furtherInformation.style.right = -shiftRight + "px";
+
+			_self.container.classList.add("tab-expanded", "tab-expanded-constraint");
+
+		}
+	}
+
+	this.hideExtraInfo = function() {
+		console.log(this.furtherInformation.clientWidth);
+		this.furtherInformation.style.left = null;
+		this.furtherInformation.style.right = null;
+		_self.container.classList.remove("tab-expanded", "tab-expanded-constraint");
 	}
 
 
@@ -133,7 +179,7 @@ function element(elementId) {
 		document.getElementById('nextTab-'+ this.jsonElement.AtomicNumber).addEventListener('click', function(event) {
 			event.stopPropagation();
 			_self.bindExtraTab();
-			_self.container.classList.add("tab-expanded");
+			_self.showExtraInfo();
 		}, false);
 		// If the viewer is on a mobile device, there won't be a click event, so bind the extra info on load
 		if(screen.width > 400) {
@@ -141,7 +187,7 @@ function element(elementId) {
 		}
 		document.getElementById('prevTab-'+ this.jsonElement.AtomicNumber).addEventListener('click', function(event) {
 			event.stopPropagation();
-			_self.container.classList.remove("tab-expanded");
+			_self.hideExtraInfo();
 		}, false);
 	}
 	
