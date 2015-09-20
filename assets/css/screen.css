@@ -248,7 +248,7 @@ body {
 
 @media (min-width: 1400px) {
     .centered {
-        width: 1350px;
+        width: 1368px;
     }
 
     .v-align {
@@ -259,7 +259,7 @@ body {
     .periodic-table th,
     .periodic-table td {
         height: 68px;
-        width: 69px;
+        width: 70px;
     }
 
     .key-list li {

@@ -75,9 +75,9 @@
     z-index: 3;
 }
 
-.el-expanded.tab-expanded .tabs-container {
-    width: 100%;
-}
+/*.el-expanded.tab-expanded .tabs-container {*/
+    /*width: 100%;*/
+/*}*/
 
 .el-expanded.tab-expanded .further-information {
     left: -300px;
@@ -87,15 +87,6 @@
 .el-expanded.tab-expanded .next {
     display: none;
 }
-
-.tab-expanded .tab-container-brief {
-    width: 40%;
-}
-
-.tab-expanded .tab-container-further {
-    width: 60%;
-}
-
 .el-focus .further-information {
     z-index: 200 !important;
 }
@@ -105,7 +96,7 @@
     position: absolute;
     top: 0;
     transition: all .25s ease;
-    width: 200%;
+    width: 720px;
 }
 
 .tab-container {
@@ -113,6 +104,14 @@
     height: 100%;
     position: relative;
     width: 50%;
+}
+.tab-container-brief {
+    width: 285px;
+}
+.tab-container-further {
+    float: none;
+    overflow: hidden;
+    width: auto;
 }
 
 .arrow {
@@ -359,6 +358,10 @@
         outline: 1px solid #000;
         z-index: 2;
     }
+
+    .periodic-table .el-expanded {
+        z-index: 3;
+    }
 }
 
 @media (min-width: 1400px) {
@@ -370,7 +373,7 @@
     .periodic-table .el {
         height: 68px;
         padding: 4px;
-        width: 69px;
+        width: 70px;
     }
 
     .el .atomic-number {
