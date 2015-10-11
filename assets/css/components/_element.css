@@ -87,9 +87,6 @@
 .el-expanded.tab-expanded .next {
     display: none;
 }
-.el-focus .further-information {
-    z-index: 200 !important;
-}
 
 .tabs-container {
     bottom: 0;
@@ -109,6 +106,7 @@
     width: 285px;
 }
 .tab-container-further {
+    background: rgba(0, 0, 0, 0.05);
     float: none;
     overflow: hidden;
     width: auto;
@@ -359,9 +357,15 @@
         z-index: 2;
     }
 
-    .periodic-table .el-expanded {
+    .periodic-table .el-expanded,
+    .periodic-table .el-expanded:hover {
         z-index: 3;
     }
+
+	.periodic-table .el-focus,
+	.periodic-table .el-focus:hover {
+		z-index: 4;
+	}
 }
 
 @media (min-width: 1400px) {
