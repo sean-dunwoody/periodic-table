@@ -44,15 +44,16 @@
 
 
     #element-close {
-        background: #c2bcbc;
+        background: #cac4c4;
         border-radius: 6px;
-        color: #000;
+        color: #111;
         display: none;
         left: 50%;
-        padding: 6px 8px;
+        margin: 0 0 0 -95px;
+        padding: 7px 10px;
         position: absolute;
         text-decoration: none;
-        top: 14px;
+        top: 13px;
     }
 
         #element-close.visible {
