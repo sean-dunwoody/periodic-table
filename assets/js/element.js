@@ -52,53 +52,53 @@ function element(elementId) {
 
 	this.showExtraInfo = function() {
 		// calculate available to space for element to expand into
-		//var screenSize = window.innerWidth;
 		var elWidth = _self.furtherInformation.offsetWidth;
 		// available space to the left of the element
-		var offsetLeft = findPos(_self.furtherInformation).x;
-
-		var leftValue = parseInt(window.getComputedStyle(_self.furtherInformation, null).getPropertyValue("left"));
-		//var rightValue = window.getComputedStyle(this.furtherInformation, null).getPropertyValue("right");
+		var offsetLeft  = findPos(_self.furtherInformation).x;
+		var offsetRight = findPos(_self.furtherInformation).r;
+		
+		var leftValue  = parseInt(window.getComputedStyle(_self.furtherInformation, null).getPropertyValue("left"));
+		var rightValue = parseInt(window.getComputedStyle(_self.furtherInformation, null).getPropertyValue("right"));
 
 		var unExpandedWidth = elWidth + (leftValue * 2);
-		//console.log('unexpanded width: ' + unExpandedWidth);
 		var finalWidth = elWidth * 2.5;
 		var newOffset = (finalWidth - unExpandedWidth) / 2;
+		console.log(newOffset);
 
-		//console.log('offset left: ' + offsetLeft);
-		//console.log('left value: ' + leftValue);
-		//console.log('new offset: ' + newOffset);
-
-		if(offsetLeft > newOffset) {
+		if((offsetLeft > newOffset) && (offsetRight > newOffset)) {
 			_self.container.classList.add("tab-expanded");
 			_self.furtherInformation.style.left = '-' + newOffset + 'px';
 			_self.furtherInformation.style.right = '-' + newOffset + 'px';
-		} else {
-			var overhang = newOffset - offsetLeft + 20;
-			//console.log("overhang: " + overhang);
-			var shiftLeft = newOffset - overhang - leftValue;
-			//console.log('shift left: ' + shiftLeft);
-			var shiftRight = newOffset + overhang + leftValue;//newOffset - (overhang);
-			//console.log('shift right: ' + shiftRight);
+		} else if((offsetLeft < newOffset)) {
+			var overhangLeft = newOffset - offsetLeft + 20;
+			var shiftLeft = newOffset - overhangLeft - leftValue;
+			var shiftRight = newOffset + overhangLeft + leftValue; //newOffset - (overhangLeft);
 
 			_self.furtherInformation.style.left = -shiftLeft + "px";
 			_self.furtherInformation.style.right = -shiftRight + "px";
 
 			_self.container.classList.add("tab-expanded", "tab-expanded-constraint");
+		} else if((offsetRight < newOffset)) {
+			var overhangRight = newOffset - offsetRight + 20;
+			var shiftLeft = newOffset + overhangRight + rightValue; //newOffset - (overhangRight);
+			var shiftRight = newOffset - overhangRight - rightValue;
+
+			_self.furtherInformation.style.left = -shiftLeft + "px";
+			_self.furtherInformation.style.right = -shiftRight + "px";
+
+			_self.container.classList.add("tab-expanded", "tab-expanded-constraint");
+		} else {
+			console.log("help");
 		}
 
-		//console.log("set 'extraInfoVisible' to true");
 		this.extraInfoVisible = true;
-		//console.log(_self.extraInfoVisible);
 	}
 
 	this.hideExtraInfo = function() {
-		//console.log(_self.furtherInformation.clientWidth);
 		_self.furtherInformation.style.left = null;
 		_self.furtherInformation.style.right = null;
 		_self.container.classList.remove("tab-expanded", "tab-expanded-constraint");
 
-		//console.log("set 'extraInfoVisible' to false");
 		_self.extraInfoVisible = false;
 	}
 
