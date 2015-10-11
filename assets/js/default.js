@@ -43,7 +43,6 @@ for(i; i<l; i++) {
 closeAll.addEventListener('click', function(event) {
 	event.preventDefault();
 	var numElements = openedElements.length;
-	console.log("num elements: " + openedElements.length);
 	for(var i = numElements - 1; i >= 0; i--) {
 		var elementReference = openedElements[i];
 		instantiatedElements[elementReference].close();
@@ -57,7 +56,6 @@ closeAll.addEventListener('click', function(event) {
 document.body.addEventListener('click', function(event) {
 	try {
 		// hide the element
-		console.log("num elements: " + openedElements.length);
 		var lastOpenedReference = openedElements[openedElements.length-1];
 		var lastOpened = instantiatedElements[lastOpenedReference]
 		lastOpened.close();
