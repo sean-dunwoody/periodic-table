@@ -192,12 +192,16 @@ function element(elementId) {
 		// Bind the top right more/less info link
 		document.getElementById('nextTab-'+ this.jsonElement.AtomicNumber).addEventListener('click', function(event) {
 			event.stopPropagation();
-			_self.bindExtraTab();
+			if(!_self.extraTabs) {
+				_self.bindExtraTab();
+			}
 			_self.showExtraInfo();
 		}, false);
 		// If the viewer is on a mobile device, there won't be a click event, so bind the extra info on load
 		if(screen.width > 400) {
-			this.bindExtraTab();
+			if(!_self.extraTabs) {
+				_self.bindExtraTab();
+			}
 		}
 		document.getElementById('prevTab-'+ this.jsonElement.AtomicNumber).addEventListener('click', function(event) {
 			event.stopPropagation();
