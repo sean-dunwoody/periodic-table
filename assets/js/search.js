@@ -9,6 +9,7 @@ var elementNumber = elements.length;
 
 searchInput.setAttribute("type", "search");
 searchInput.setAttribute("autofocus", "true");
+searchInput.setAttribute("placeholder", "Search Elements");
 searchInput.classList.add("table-search");
 // add a class to the body so we know the search functionality is enabled
 document.body.classList.add("search-enabled")
