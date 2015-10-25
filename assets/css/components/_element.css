@@ -23,7 +23,9 @@
 }
 
 .el .atomic-number {
+	display: block;
     font-size: 14px;
+    position: relative;
 }
 
 .el .heading {
@@ -114,6 +116,7 @@
 
 .arrow {
     background: rgba(255, 255, 255, 0.4);
+    border: 0;
     cursor: pointer;
     display: block;
     padding: 12px 12px 13px 12px;
@@ -209,7 +212,7 @@
     height: 85%;
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1600px) and (min-width: 800px) {
     td:nth-of-type(1).el-expanded .further-information {
         left: -10px;
         right: -210px;
@@ -232,11 +235,11 @@
 }
 
 @media (max-width: 800px) {
-    td:nth-of-type(1).el-expanded .further-information,
+    /*td:nth-of-type(1).el-expanded .further-information,
     td:nth-of-type(18).el-expanded .further-information {
         left: auto;
         right: auto;
-    }
+    }*/
 
     /**
      * max width and height used so we can css animate
@@ -297,7 +300,7 @@
         max-width: 60%;
     }
 
-    .el-expanded .further-information {
+    /*.el-expanded .further-information {
         border: 0;
         bottom: auto;
         left: auto;
@@ -305,7 +308,16 @@
         right: auto;
         text-align: left;
         top: auto;
-    }
+    }*/
+    .el-expanded .further-information {
+	    bottom: 0;
+	    left: 0;
+	    overflow: auto;
+	    position: fixed;
+	    right: 0;
+	    top: 0;
+	    z-index: 3000;
+	}
 
     .tabs-container {
         overflow: hidden;
@@ -325,9 +337,21 @@
         width: 50%;
     }
 
+
     .arrow {
+    	font-size: 18px;
+    	padding: 7px 22px 8px 22px;
+    }
+
+    .arrow.next,
+    .arrow.prev {
         display: none;
     }
+}
+@media (min-width: 800px) {
+	.arrow.el-close {
+		display: none;
+	}
 }
 
 @media (min-width: 1200px) {

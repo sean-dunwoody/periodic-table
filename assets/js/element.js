@@ -130,6 +130,7 @@ function element(elementId) {
 		this.furtherInformation.innerHTML =  '<div class="tabs-container" id="'+ this.jsonElement.AtomicNumber +'">'
 			+' <div class="tab-container tab-container-brief">'
 			+' 	<span class="heading">'+ this.jsonElement.ElementName +'</span>'
+			+'  <button class="arrow el-close" id="elClose-'+ this.jsonElement.AtomicNumber +'">Close</button>'
 			+' 	<span class="arrow next" id="nextTab-'+ this.jsonElement.AtomicNumber +'">More Info</span>'
 			+' 	<div class="content">'
 			+'		<div class="information">'
@@ -206,6 +207,11 @@ function element(elementId) {
 		document.getElementById('prevTab-'+ this.jsonElement.AtomicNumber).addEventListener('click', function(event) {
 			event.stopPropagation();
 			_self.hideExtraInfo();
+		}, false);
+
+		document.getElementById('elClose-' + this.jsonElement.AtomicNumber).addEventListener('click', function(event) {
+			event.stopPropagation();
+			_self.close();
 		}, false);
 	}
 }
