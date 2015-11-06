@@ -22,15 +22,15 @@ function element(elementId) {
 		for(var i=1; i<rows+1; i++) {
 			for(var j=1;j<cols+1;j++) {
 				if(this.isOdd(j) && protons>0) {
-					this.ctx.fillStyle = "#ff0000";	
+					this.ctx.fillStyle = "#ff0000";
 					protons--;
 				}
 				else if(neutrons>0) {
 					this.ctx.fillStyle = "#0000ff";
-					neutrons--;	
+					neutrons--;
 				}
 				else if(neutrons+protons==0) {
-					this.ctx.fillStyle = "transparent";		
+					this.ctx.fillStyle = "transparent";
 				}
 				this.ctx.beginPath();
 				this.ctx.arc( j*circumference, i*circumference, radius, 0, Math.PI*2, false );
@@ -56,7 +56,7 @@ function element(elementId) {
 		// available space to the left of the element
 		var offsetLeft  = findPos(_self.furtherInformation).x;
 		var offsetRight = findPos(_self.furtherInformation).r;
-		
+
 		var leftValue  = parseInt(window.getComputedStyle(_self.furtherInformation, null).getPropertyValue("left"));
 		var rightValue = parseInt(window.getComputedStyle(_self.furtherInformation, null).getPropertyValue("right"));
 
@@ -110,7 +110,7 @@ function element(elementId) {
 	// this is one hell of a constructor...
 	if(!this.container.classList.contains('el-loaded')) {
 		// get the JSON data for this element
-		this.jsonUrl = 'http://periodic-table.local/element/' + this.id + '.json';
+		this.jsonUrl = 'http://periodic-table.dev/element/' + this.id + '.json';
 		this.jsonData = httpGet(this.jsonUrl);
 		this.jsonParsed = JSON.parse(this.jsonData.response);
 		this.jsonElement = this.jsonParsed.element;
@@ -192,7 +192,7 @@ function element(elementId) {
 
 		// Bind the top right more/less info link
 		document.getElementById('nextTab-'+ this.jsonElement.AtomicNumber).addEventListener('click', function(event) {
-			event.stopPropagation();
+			event.preventDefault();
 			if(!_self.extraTabs) {
 				_self.bindExtraTab();
 			}
@@ -205,7 +205,7 @@ function element(elementId) {
 			}
 		}
 		document.getElementById('prevTab-'+ this.jsonElement.AtomicNumber).addEventListener('click', function(event) {
-			event.stopPropagation();
+			event.preventDefault();
 			_self.hideExtraInfo();
 		}, false);
 
