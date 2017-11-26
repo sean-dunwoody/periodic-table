@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml" lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta property="og:image" content="http://periodic-table.co/assets/img/screenshot3.jpg"/>
         <title>Periodic table</title>
         <meta name="viewport" content="initial-scale=1" />
-        <link rel="stylesheet" type="text/css" href="/css/screen.css" media="screen">
+        <meta name="description" content="Interactive periodic table with expandable information on all elements.">
+        <!-- build:css assets/css/screen.min.css -->
+        <link rel="stylesheet" type="text/css" href="assets/css/screen.css?v=2" media="screen">
+        <!-- /build -->
     </head>
     <body>
         
@@ -17,8 +21,6 @@
                         <li class="PageSelected"><a href="about.html">About</a></li>
                         <li><a href="https://github.com/sean-dunwoody/periodic-table">Download</a></li>
                     </ol>
-
-                    <a href="#" id="element-close">X</a>
                 </div>
             
             </div>
@@ -38,8 +40,10 @@
             </div>
         </div>
         
-        <script src="js/responsive-nav.js"></script>
-        <script src="js/default.js"></script>
+        <!-- build:js assets/js/default.min.js?v=2 -->
+        <script src="assets/js/responsive-nav.js"></script>
+        <script src="assets/js/default.js"></script>
+        <!-- /build -->
 
     </body>
 </html>

@@ -1,0 +1,25 @@
+/*------------------------------------*\
+    #Search
+\*------------------------------------*/
+
+.table-search {
+    background: #efefef;
+    border: 3px solid #c2bcbc;
+    color: #555;
+    padding: 8px 12px;
+    position: absolute;
+    right: 10px;
+    width: 200px;
+    top: 9px;
+}
+
+.table-search:focus {
+    background: #fff;
+}
+
+@media (min-width: 800px) {
+	.table-search {
+	    right: 0;
+    	width: 300px;
+	}
+}
