@@ -8,19 +8,19 @@ module.exports = function(grunt) {
             // 2. Configuration for concatinating files goes here.
             js: {
                 src: [
-                    'assets/js/ajax.js',
-                    'assets/js/responsive-nav.js',
-                    'assets/js/simple_tabs.js',
-                    'assets/js/offset.js',
-                    'assets/js/element.js',
-                    'assets/js/search.js',
-                    'assets/js/default.js'
+                    'app/assets/js/ajax.js',
+                    'app/assets/js/responsive-nav.js',
+                    'app/assets/js/simple_tabs.js',
+                    'app/assets/js/offset.js',
+                    'app/assets/js/element.js',
+                    'app/assets/js/search.js',
+                    'app/assets/js/default.js'
                 ],
                 dest: 'dist/assets/js/default.js'
             },
             // move the css file to the dist folder so we can run uncss on it
             cssComponents: {
-                src: ['assets/css/components/_element.css', 'assets/css/components/_navigation.css', 'assets/css/components/_search.css'],
+                src: ['app/assets/css/components/_element.css', 'app/assets/css/components/_navigation.css', 'app/assets/css/components/_search.css'],
                 dest: 'dist/assets/css/components.css'
             }
         },
@@ -30,6 +30,7 @@ module.exports = function(grunt) {
                     // includes files within path
                     {
                         expand: true,
+                        cwd: 'app',
                         src: ['element/*.json'],
                         dest: 'dist',
                         filter: 'isFile'
@@ -39,7 +40,7 @@ module.exports = function(grunt) {
             css: {
                 files: [
                     {
-                        src: 'assets/css/screen.css',
+                        src: 'app/assets/css/screen.css',
                         dest: 'dist/assets/css/screen.min.css',
                         filter: 'isFile'
                     }
@@ -70,7 +71,7 @@ module.exports = function(grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: 'assets/img',
+                    cwd: 'app/assets/img',
                     flatten: true,
                     src: ['*.{png,jpg,jpeg,gif}'],
                     dest: 'dist/assets/img'
@@ -80,8 +81,8 @@ module.exports = function(grunt) {
         processhtml: {
             dist: {
                 files: {
-                    'dist/index.html': ['index.html'],
-                    'dist/about.html': ['about.html']
+                    'dist/index.html': ['app/index.html'],
+                    'dist/about.html': ['app/about.html']
                 }
             }
         },
@@ -99,18 +100,18 @@ module.exports = function(grunt) {
         },
         watch: {
             html: {
-                files: ['*.html'],
+                files: ['app/*.html'],
                 tasks: ['processhtml', 'htmlmin']
             },
             css: {
-                files: ['assets/css/**/*.css'],
+                files: ['app/assets/css/**/*.css'],
                 tasks: ['copy', 'concat', 'uncss', 'cssmin']
                 //options: {
                 //    livereload: true,
                 //},
             },
             js: {
-                files: ['assets/js/*.js'],
+                files: ['app/assets/js/*.js'],
                 tasks: ['concat', 'uglify']
             }
         }
