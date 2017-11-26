@@ -110,7 +110,7 @@ function element(elementId) {
 	// this is one hell of a constructor...
 	if(!this.container.classList.contains('el-loaded')) {
 		// get the JSON data for this element
-		this.jsonUrl = 'http://periodic-table.dev/element/' + this.id + '.json';
+		this.jsonUrl = 'http://periodic-table.localhost/element/' + this.id + '.json';
 		this.jsonData = httpGet(this.jsonUrl);
 		this.jsonParsed = JSON.parse(this.jsonData.response);
 		this.jsonElement = this.jsonParsed.element;
