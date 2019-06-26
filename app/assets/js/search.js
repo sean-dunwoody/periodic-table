@@ -56,4 +56,7 @@ searchInput.addEventListener("keydown", function(event) {
 		}
 	}
 });
-navigationContainer.appendChild(searchInput);
+
+if(navigationContainer) {
+    navigationContainer.appendChild(searchInput);
+}

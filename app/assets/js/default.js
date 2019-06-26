@@ -40,18 +40,20 @@ for(i; i<l; i++) {
 }
 
 // Code for closing all elements at once
-closeAll.addEventListener('click', function(event) {
-	event.preventDefault();
-	var numElements = openedElements.length;
-	for(var i = numElements - 1; i >= 0; i--) {
-		var elementReference = openedElements[i];
-		instantiatedElements[elementReference].close();
-		// this seems ineffecient, but apparently it's (probably) the best way in our circumstances
-		// see http://stackoverflow.com/questions/1232040/how-to-empty-an-array-in-javascript for more
-		openedElements.pop();
-	}
-	closeAll.classList.remove('visible');
-}, false);
+if(closeAll) {
+    closeAll.addEventListener('click', function(event) {
+    	event.preventDefault();
+    	var numElements = openedElements.length;
+    	for(var i = numElements - 1; i >= 0; i--) {
+    		var elementReference = openedElements[i];
+    		instantiatedElements[elementReference].close();
+    		// this seems ineffecient, but apparently it's (probably) the best way in our circumstances
+    		// see http://stackoverflow.com/questions/1232040/how-to-empty-an-array-in-javascript for more
+    		openedElements.pop();
+    	}
+    	closeAll.classList.remove('visible');
+    }, false);
+}
 // Code for closing elements (could do with changing)
 document.body.addEventListener('click', function(event) {
 	try {
