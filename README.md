@@ -21,7 +21,9 @@ There are lots of things I know can be improved, some of which are due to the lo
 
 I've also included the GruntFile I'm using on this project, although it should work as-is without you needing to use this.
 
-It should be noted that if you want to set this up on your local machine, you'll need host it via WAMP/LAMP or something similar. You'll need to run `npm install`, and then `grunt build`, after that you'll need to set the webroot to the `dist` directory. `element.js` is set by default to request json files from `http://periodic-table.localhost/element/number.js` although you can host it via a different name and simply change the reference in this file. After any subsequent CSS/JavaScript changes, you'll need to run `grunt build` again.
+It should be noted that if you want to set this up on your local machine, you'll need host it via WAMP/LAMP or something similar. 
+
+You'll need to run `nvm use` (assuming you have the Node Version manager setup - the project ideally needs to run on Node JS version 14.15.3), then `npm install`, and then `grunt build`. After that you'll need to set the webroot to the `dist` directory. `element.js` is set by default to request json files from `http://periodic-table.localhost/element/number.js` although you can host it via a different name and simply change the reference in this file. After any subsequent CSS/JavaScript changes, you'll need to run `grunt build` again.
 
 I'd also like to hope that this project is a good place to start if you want to ease yourself into learning a little bit about JavaScript/Json, the code I've written definitely isn't as good as it could be, but I'm hoping that will improve in the not-too-distant future. When I'm happy with the quality of the code I'm hoping to package this up so it's easier to come at this from a beginners standpoint (maybe with an accompanying website).
 
